@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>WORKSHOP | THE ORIGIN</title>
+<title>Chapter I · The Origin</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html,body{
-width:100%;
-height:100%;
-overflow:hidden;
-font-family:'Montserrat',sans-serif;
-background:#050505;
+html{
+scroll-behavior:smooth;
 }
 
 body{
 
-background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
-url("assets/workshop.jpg");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+margin:0;
+background:#050505;
+color:#F2F0EA;
+font-family:Arial,Helvetica,sans-serif;
 
 }
 
-.container{
+.hero{
 
-position:absolute;
+height:100vh;
 
-inset:0;
+background:url("assets/workshop-detail.jpg") center center;
+
+background-size:cover;
+
+position:relative;
 
 display:flex;
-
-flex-direction:column;
 
 justify-content:center;
 
@@ -53,171 +43,153 @@ align-items:center;
 
 text-align:center;
 
+}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+}
+
+.content{
+
+position:relative;
+
+z-index:2;
+
+max-width:850px;
+
 padding:40px;
 
 }
 
 .chapter{
 
-color:#B08D57;
+letter-spacing:8px;
 
-font-size:13px;
+font-size:14px;
 
-letter-spacing:10px;
+opacity:.8;
 
 margin-bottom:25px;
-
-opacity:0;
-
-animation:fade .8s forwards;
 
 }
 
 h1{
 
-color:#F2F0EA;
-
-font-size:78px;
-
-font-weight:700;
-
-letter-spacing:12px;
-
-margin-bottom:35px;
-
-opacity:0;
-
-animation:fade 1s .6s forwards;
-
-}
-
-.line{
-
-width:120px;
-
-height:2px;
-
-background:#B08D57;
-
-margin-bottom:45px;
-
-opacity:0;
-
-animation:fade 1s 1.2s forwards;
-
-}
-
-.text{
-
-color:#d8d8d8;
-
-font-size:23px;
+font-size:70px;
 
 font-weight:300;
 
-line-height:2;
+letter-spacing:6px;
 
-max-width:850px;
-
-opacity:0;
-
-animation:fade 1s 1.8s forwards;
+margin-bottom:35px;
 
 }
 
-.text p{
+.quote{
 
-margin-bottom:22px;
+font-size:32px;
+
+line-height:1.6;
+
+font-weight:200;
+
+}
+
+.quote span{
+
+display:block;
+
+color:#B08D57;
+
+margin-top:10px;
+
+}
+
+.arrow{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:34px;
+
+animation:float 2s infinite;
+
+z-index:3;
+
+}
+
+@keyframes float{
+
+0%{transform:translate(-50%,0);}
+50%{transform:translate(-50%,12px);}
+100%{transform:translate(-50%,0);}
+
+}
+
+.story{
+
+background:#111;
+
+padding:140px 10%;
+
+}
+
+.story h2{
+
+font-size:42px;
+
+font-weight:300;
+
+margin-bottom:40px;
+
+}
+
+.story p{
+
+font-size:22px;
+
+line-height:2;
+
+max-width:900px;
+
+opacity:.85;
 
 }
 
 .button{
 
+display:inline-block;
+
 margin-top:70px;
 
-padding:18px 46px;
+padding:18px 60px;
 
 border:1px solid #B08D57;
 
 text-decoration:none;
 
-color:white;
+color:#F2F0EA;
 
-letter-spacing:6px;
+letter-spacing:5px;
 
-transition:.35s;
-
-opacity:0;
-
-animation:fade 1s 2.8s forwards;
+transition:.4s;
 
 }
 
 .button:hover{
 
-background:#B08D57;
-
-color:#111;
-
-transform:translateY(-3px);
-
-}
-
-.footer{
-
-position:absolute;
-
-bottom:30px;
-
-color:#888;
-
-font-size:11px;
-
-letter-spacing:5px;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@media(max-width:768px){
-
-h1{
-
-font-size:44px;
-
-letter-spacing:5px;
-
-}
-
-.text{
-
-font-size:17px;
-
-}
-
-.button{
-
-padding:16px 34px;
-
-}
+background:#5A3B2B;
 
 }
 
@@ -227,7 +199,11 @@ padding:16px 34px;
 
 <body>
 
-<div class="container">
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="content">
 
 <div class="chapter">
 
@@ -241,49 +217,57 @@ THE ORIGIN
 
 </h1>
 
-<div class="line"></div>
+<div class="quote">
 
-<div class="text">
+Before there was a garment...
 
-<p>
+<span>
 
-Before a Code...
+there was a craft.
 
-there was a purpose.
-
-</p>
-
-<p>
-
-Before a garment...
-
-there was a value.
-
-</p>
-
-<p>
-
-Not everything deserves to become a Code.
-
-Only principles that stand the test of time.
-
-</p>
+</span>
 
 </div>
 
-<a class="button" href="manifesto.html">
+</div>
 
-ENTER THE WORKSHOP
+<div class="arrow">
+
+↓
+
+</div>
+
+</section>
+
+<section class="story">
+
+<h2>
+
+Every stitch tells a story.
+
+</h2>
+
+<p>
+
+Nothing begins with a product.
+
+Everything begins with dedication.
+
+With people who perfect every detail.
+
+With hands that value time over speed.
+
+The Code was born from that philosophy.
+
+</p>
+
+<a href="manifesto.html" class="button">
+
+ENTER THE MANIFESTO
 
 </a>
 
-<div class="footer">
-
-WORKSHOP · THE CODE
-
-</div>
-
-</div>
+</section>
 
 </body>
 
