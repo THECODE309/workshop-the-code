@@ -18,13 +18,13 @@
 
 --border:#d9d4cc;
 
---max-width:1380px;
+--max-width:1500px;
 
 }
 
 *{
 margin:0;
-padding:0;
+padding:22px;
 box-sizing:border-box;
 }
 
