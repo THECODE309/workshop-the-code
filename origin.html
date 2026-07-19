@@ -4,13 +4,19 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chapter I · The Origin</title>
+<title>WORKSHOP — THE CODE | THE ORIGIN</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 html{
 scroll-behavior:smooth;
@@ -18,22 +24,22 @@ scroll-behavior:smooth;
 
 body{
 
-margin:0;
 background:#050505;
 color:#F2F0EA;
-font-family:Arial,Helvetica,sans-serif;
+font-family:Inter,sans-serif;
+overflow-x:hidden;
 
 }
+
+/* HERO */
 
 .hero{
 
 height:100vh;
-background:url("assets/workshop-detail.jpg") center center;
-
-
-background-size:cover;
 
 position:relative;
+
+overflow:hidden;
 
 display:flex;
 
@@ -45,35 +51,79 @@ text-align:center;
 
 }
 
-.overlay{
+/* IMAGEN */
+
+.hero::before{
+
+content:"";
 
 position:absolute;
 
 inset:0;
 
-background:rgba(0,0,0,.55);
+background:url("assets/workshop-detail.jpg") center center;
+
+background-size:cover;
+
+background-repeat:no-repeat;
+
+transform:scale(1);
+
+animation:zoom 30s ease-in-out infinite alternate;
+
+z-index:0;
 
 }
+
+/* OSCURECER */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+to bottom,
+
+rgba(0,0,0,.20),
+
+rgba(0,0,0,.45),
+
+rgba(0,0,0,.70)
+
+);
+
+z-index:1;
+
+}
+
+/* CONTENIDO */
 
 .content{
 
 position:relative;
 
-z-index:2;
+z-index:5;
 
-max-width:850px;
+max-width:900px;
 
 padding:40px;
+
+animation:fadeUp 2s ease;
 
 }
 
 .chapter{
 
-letter-spacing:8px;
+letter-spacing:12px;
 
-font-size:14px;
+font-size:13px;
 
-opacity:.8;
+opacity:.7;
 
 margin-bottom:25px;
 
@@ -81,23 +131,27 @@ margin-bottom:25px;
 
 h1{
 
-font-size:70px;
+font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-letter-spacing:6px;
+font-size:95px;
 
-margin-bottom:35px;
+letter-spacing:10px;
+
+margin-bottom:40px;
 
 }
 
 .quote{
 
-font-size:32px;
+font-family:"Cormorant Garamond",serif;
 
-line-height:1.6;
+font-size:36px;
 
-font-weight:200;
+line-height:1.8;
+
+font-weight:300;
 
 }
 
@@ -105,11 +159,13 @@ font-weight:200;
 
 display:block;
 
-color:#B08D57;
-
 margin-top:10px;
 
+color:#B08D57;
+
 }
+
+/* FLECHA */
 
 .arrow{
 
@@ -123,45 +179,43 @@ transform:translateX(-50%);
 
 font-size:34px;
 
-animation:float 2s infinite;
+z-index:20;
 
-z-index:3;
+animation:arrow 2s infinite;
 
-}
-
-@keyframes float{
-
-0%{transform:translate(-50%,0);}
-50%{transform:translate(-50%,12px);}
-100%{transform:translate(-50%,0);}
+opacity:.7;
 
 }
+
+/* STORY */
 
 .story{
 
-background:#111;
+background:#0E0E0E;
 
-padding:140px 10%;
+padding:150px 10%;
 
 }
 
 .story h2{
 
-font-size:42px;
+font-family:"Cormorant Garamond",serif;
+
+font-size:55px;
 
 font-weight:300;
 
-margin-bottom:40px;
+margin-bottom:35px;
 
 }
 
 .story p{
 
+max-width:900px;
+
 font-size:22px;
 
 line-height:2;
-
-max-width:900px;
 
 opacity:.85;
 
@@ -177,9 +231,9 @@ padding:18px 60px;
 
 border:1px solid #B08D57;
 
-text-decoration:none;
-
 color:#F2F0EA;
+
+text-decoration:none;
 
 letter-spacing:5px;
 
@@ -193,6 +247,96 @@ background:#5A3B2B;
 
 }
 
+/* ANIMACIONES */
+
+@keyframes zoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.12);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes arrow{
+
+0%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+100%{
+
+transform:translate(-50%,0);
+
+}
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+h1{
+
+font-size:56px;
+
+}
+
+.quote{
+
+font-size:26px;
+
+}
+
+.story h2{
+
+font-size:42px;
+
+}
+
+.story p{
+
+font-size:18px;
+
+}
+
+}
+
 </style>
 
 </head>
@@ -200,8 +344,6 @@ background:#5A3B2B;
 <body>
 
 <section class="hero">
-
-<div class="overlay"></div>
 
 <div class="content">
 
@@ -219,7 +361,7 @@ THE ORIGIN
 
 <div class="quote">
 
-Before there was a garment...
+Before there was a product...
 
 <span>
 
@@ -255,7 +397,11 @@ Everything begins with dedication.
 
 With people who perfect every detail.
 
-With hands that value time over speed.
+With patience.
+
+With discipline.
+
+With values.
 
 The Code was born from that philosophy.
 
