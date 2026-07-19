@@ -1,1 +1,232 @@
+/*==================================================
+WORKSHOP - THE CODE
+HOME STYLE v1.0
+==================================================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --bg:#050505;
+    --white:#F5F5F2;
+    --brown:#8A5A38;
+    --grey:#9A9A9A;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    overflow:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.hero{
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at center,#111 0%,#050505 70%);
+}
+
+.brand{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.est{
+
+    font-size:.72rem;
+
+    letter-spacing:.45em;
+
+    color:var(--grey);
+
+    margin-bottom:35px;
+
+}
+
+.title{
+
+    font-size:7rem;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    line-height:.9;
+
+}
+
+.subtitle{
+
+    margin-top:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.subtitle span{
+
+    width:70px;
+
+    height:1px;
+
+    background:var(--brown);
+
+}
+
+.subtitle p{
+
+    color:var(--brown);
+
+    font-size:.85rem;
+
+    letter-spacing:.55em;
+
+}
+
+.claim{
+
+    margin-top:60px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#d5d5d5;
+
+}
+
+.enter{
+
+    display:inline-block;
+
+    margin-top:65px;
+
+    padding:18px 46px;
+
+    border:1px solid var(--brown);
+
+    color:var(--brown);
+
+    letter-spacing:.30em;
+
+    font-size:.78rem;
+
+    transition:.35s;
+
+}
+
+.enter:hover{
+
+    background:var(--brown);
+
+    color:white;
+
+}
+
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:.72rem;
+
+    letter-spacing:.4em;
+
+    color:#666;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:900px){
+
+.title{
+
+font-size:4rem;
+
+}
+
+.claim{
+
+font-size:1rem;
+
+padding:0 30px;
+
+}
+
+.subtitle span{
+
+width:40px;
+
+}
+
+.subtitle p{
+
+font-size:.75rem;
+
+letter-spacing:.35em;
+
+}
+
+.enter{
+
+padding:16px 30px;
+
+}
+
+}
