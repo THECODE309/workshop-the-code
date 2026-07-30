@@ -208,8 +208,13 @@ gap:30px;
 
 }
 
-.code-small span{
+.code-small{
 
+margin-top:70px;
+
+margin-bottom:20px;
+
+}
 display:block;
 
 font-size:.72rem;
