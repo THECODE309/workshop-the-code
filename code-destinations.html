@@ -5,22 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DISCOVER YOUR CODE — WORKSHOP | THE CODE</title>
+  <title>THE CODE — Discover Your Code</title>
 
   <meta
     name="description"
-    content="Discover your destination. The Origin or The Urban."
+    content="THE CODE. Two worlds. One Code. Discover THE ORIGIN and THE URBAN."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
   >
 
   <style>
 
+    /* =====================================================
+       THE CODE — DISCOVER YOUR CODE
+       PAGE 03
+       ===================================================== */
+
     :root {
-      --black: #080808;
-      --off-white: #f2f0ea;
-      --brown: #6b432d;
-      --grey: #88837d;
-      --line: rgba(242, 240, 234, 0.18);
+      --black: #0d0d0d;
+      --black-soft: #111111;
+      --white: #f5f3ef;
+      --muted: #aaa7a0;
+      --brown: #8a5a38;
+      --line: rgba(245,243,239,.20);
     }
+
+
+    /* RESET
+       ===================================================== */
 
     * {
       margin: 0;
@@ -28,310 +46,415 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
+      min-height: 100vh;
       background: var(--black);
-      color: var(--off-white);
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
+
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* =========================
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* =====================================================
        HEADER
-    ========================= */
+       ===================================================== */
 
     header {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 70px;
-
-      padding: 0 5vw;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      z-index: 100;
-
-      background: rgba(8, 8, 8, 0.88);
-      backdrop-filter: blur(8px);
-
-      border-bottom: 1px solid var(--line);
+      padding: 34px 5vw;
+      z-index: 10;
     }
+
 
     .brand {
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
-      line-height: 0.9;
+      align-items: flex-start;
     }
 
-    .brand-workshop {
-      font-size: 13px;
+
+    .brand-main {
+      font-size: 1.35rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: .20em;
+      line-height: 1;
     }
 
-    .brand-code {
-      margin-top: 5px;
 
-      font-size: 10px;
-      letter-spacing: 0.22em;
+    .brand-sub {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 9px;
+    }
 
+
+    .brand-sub .line {
+      width: 38px;
+      height: 1px;
+      background: var(--brown);
+    }
+
+
+    .brand-sub span:last-child {
+      font-size: .62rem;
+      letter-spacing: .35em;
       color: var(--brown);
     }
 
-    .back {
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
 
-      opacity: 0.65;
-
-      transition: opacity 0.25s ease;
-    }
-
-    .back:hover {
-      opacity: 1;
-    }
-
-    /* =========================
-       MAIN
-    ========================= */
-
-    main {
-      min-height: 100vh;
-
-      padding: 130px 6vw 80px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    /* =====================================================
+       INTRO
+       ===================================================== */
 
     .intro {
       text-align: center;
-      margin-bottom: 65px;
+      padding: 135px 24px 70px;
     }
+
 
     .eyebrow {
-      margin-bottom: 22px;
-
-      font-size: 10px;
-      font-weight: 700;
-
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-
+      font-size: .62rem;
+      letter-spacing: .42em;
       color: var(--brown);
+      margin-bottom: 25px;
+      text-transform: uppercase;
     }
+
 
     h1 {
-      font-size: clamp(48px, 8vw, 100px);
-
-      line-height: 0.85;
-      letter-spacing: -0.055em;
-
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: .88;
+      font-weight: 800;
+      letter-spacing: -.035em;
       text-transform: uppercase;
-      font-weight: 900;
     }
+
 
     .intro p {
-      max-width: 520px;
-
-      margin: 28px auto 0;
-
-      font-size: 14px;
-      line-height: 1.6;
-
-      color: rgba(242, 240, 234, 0.58);
+      max-width: 620px;
+      margin: 30px auto 0;
+      color: var(--muted);
+      font-size: .90rem;
+      line-height: 1.7;
+      font-weight: 300;
     }
 
-    /* =========================
+
+    /* =====================================================
        DESTINATIONS
-    ========================= */
+       ===================================================== */
 
     .destinations {
-      max-width: 1250px;
       width: 100%;
-
       margin: 0 auto;
-
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
 
-      gap: 2px;
-
-      background: var(--line);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
+
     .destination {
+      position: relative;
+
       min-height: 470px;
 
-      padding: 42px;
-
-      background: #101010;
+      padding: 42px 48px 50px;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      position: relative;
-
       overflow: hidden;
 
+      background: var(--black);
+
       transition:
-        background 0.35s ease,
-        transform 0.35s ease;
+        background .45s ease,
+        transform .45s ease;
     }
+
+
+    .destination + .destination {
+      border-left: 1px solid var(--line);
+    }
+
 
     .destination:hover {
-      background: #151515;
+      background: var(--black-soft);
     }
 
-    .destination-number {
-      font-size: 10px;
 
-      letter-spacing: 0.22em;
+    /* =====================================================
+       DESTINATION NUMBER
+       ===================================================== */
 
-      color: var(--grey);
+    .number {
+      font-size: .62rem;
+      letter-spacing: .30em;
+      color: var(--muted);
+      text-transform: uppercase;
     }
+
+
+    /* =====================================================
+       DESTINATION CONTENT
+       ===================================================== */
 
     .destination-content {
-      position: relative;
-      z-index: 2;
+      max-width: 600px;
     }
 
-    .destination-kicker {
-      margin-bottom: 18px;
 
-      font-size: 10px;
-
-      letter-spacing: 0.25em;
-
-      text-transform: uppercase;
-
+    .subtitle {
+      font-size: .62rem;
+      letter-spacing: .30em;
       color: var(--brown);
+      text-transform: uppercase;
+      margin-bottom: 15px;
     }
+
 
     .destination h2 {
-      font-size: clamp(48px, 6vw, 82px);
+      font-size: clamp(4rem, 7vw, 7rem);
+      line-height: .82;
+      font-weight: 800;
+      letter-spacing: -.055em;
 
-      line-height: 0.82;
-
-      letter-spacing: -0.055em;
-
-      text-transform: uppercase;
-
-      margin-bottom: 28px;
-    }
-
-    .destination p {
-      max-width: 440px;
-
-      font-size: 14px;
-
-      line-height: 1.65;
-
-      color: rgba(242, 240, 234, 0.58);
-    }
-
-    .destination-button {
-      display: inline-flex;
-
-      align-items: center;
-
-      margin-top: 30px;
-
-      padding: 15px 22px;
-
-      border: 1px solid rgba(242, 240, 234, 0.28);
-
-      font-size: 9px;
-
-      font-weight: 700;
-
-      letter-spacing: 0.2em;
-
-      text-transform: uppercase;
+      margin: 18px 0 28px;
 
       transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+        transform .45s ease,
+        letter-spacing .45s ease;
     }
 
-    .destination-button:hover {
-      background: var(--off-white);
-      color: var(--black);
-      border-color: var(--off-white);
+
+    .destination:hover h2 {
+      transform: translateX(8px);
+      letter-spacing: -.045em;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
 
-    footer {
-      padding: 35px 6vw;
+    .destination p {
+      max-width: 500px;
+
+      color: var(--muted);
+
+      font-size: .90rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+
+    /* =====================================================
+       ENTER
+       ===================================================== */
+
+    .enter {
+      margin-top: 35px;
+
+      font-size: .62rem;
+      letter-spacing: .28em;
+
+      color: var(--brown);
 
       display: flex;
-      justify-content: space-between;
+      align-items: center;
 
-      border-top: 1px solid var(--line);
-    }
-
-    footer span,
-    footer a {
-      font-size: 8px;
-
-      letter-spacing: 0.18em;
+      gap: 14px;
 
       text-transform: uppercase;
-
-      color: rgba(242, 240, 234, 0.45);
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
 
-    @media (max-width: 760px) {
+    .enter span {
+      font-size: 1rem;
+
+      transition:
+        transform .3s ease;
+    }
+
+
+    .destination:hover .enter span {
+      transform: translateX(7px);
+    }
+
+
+    /* =====================================================
+       SUBTLE HOVER LIGHT
+       ===================================================== */
+
+    .destination::after {
+      content: "";
+
+      position: absolute;
+
+      width: 280px;
+      height: 280px;
+
+      border-radius: 50%;
+
+      background: rgba(138,90,56,.035);
+
+      right: -120px;
+      bottom: -120px;
+
+      opacity: 0;
+
+      transition:
+        opacity .5s ease,
+        transform .5s ease;
+    }
+
+
+    .destination:hover::after {
+      opacity: 1;
+      transform: scale(1.25);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+      margin-top: auto;
+
+      padding: 42px 5vw 30px;
+
+      text-align: center;
+
+      color: #77736d;
+
+      font-size: .58rem;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 800px) {
 
       header {
-        padding: 0 20px;
+        padding: 26px 7vw;
       }
 
-      main {
-        padding: 110px 20px 55px;
+
+      .brand-main {
+        font-size: 1.05rem;
       }
+
 
       .intro {
-        margin-bottom: 45px;
+        padding: 125px 24px 60px;
       }
 
+
+      h1 {
+        font-size: clamp(3.5rem, 16vw, 6rem);
+      }
+
+
+      .intro p {
+        font-size: .82rem;
+        line-height: 1.7;
+      }
+
+
       .destinations {
+        width: 100%;
         grid-template-columns: 1fr;
       }
 
+
       .destination {
-        min-height: 390px;
-        padding: 30px;
+        min-height: 430px;
+
+        padding: 38px 28px 45px;
       }
 
-      footer {
-        padding: 30px 20px;
 
-        flex-direction: column;
-        gap: 15px;
+      .destination + .destination {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+
+      .destination h2 {
+        font-size: clamp(4rem, 18vw, 7rem);
+      }
+
+
+      .destination p {
+        font-size: .82rem;
+      }
+
+
+      .enter {
+        margin-top: 28px;
+      }
+
+
+      footer {
+        padding: 35px 20px 25px;
+        font-size: .52rem;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL SCREENS
+       ===================================================== */
+
+    @media (max-width: 420px) {
+
+      .intro {
+        padding-top: 120px;
+      }
+
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+
+      .destination {
+        min-height: 400px;
+      }
+
+
+      .destination h2 {
+        font-size: 4.2rem;
       }
 
     }
@@ -343,149 +466,197 @@
 
 <body>
 
-
-  <!-- HEADER -->
-
-  <header>
-
-    <a href="index.html" class="brand">
-
-      <span class="brand-workshop">
-        WORKSHOP
-      </span>
-
-      <span class="brand-code">
-        THE CODE
-      </span>
-
-    </a>
+  <div class="page">
 
 
-    <a href="index.html" class="back">
-      Back
-    </a>
+    <!-- =================================================
+         HEADER
+         ================================================= -->
 
-  </header>
+    <header>
 
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="WORKSHOP THE CODE home"
+      >
 
-  <!-- MAIN -->
-
-  <main>
-
-
-    <section class="intro">
-
-      <div class="eyebrow">
-        WORKSHOP — THE CODE
-      </div>
-
-      <h1>
-        Discover<br>
-        Your Code
-      </h1>
-
-      <p>
-        Two worlds. One Code.
-        Choose the destination that represents
-        the way you see yourself.
-      </p>
-
-    </section>
-
-
-    <!-- DESTINATIONS -->
-
-    <section class="destinations">
-
-
-      <!-- THE ORIGIN -->
-
-<a href="origin.html" class="destination">
-
-        <div class="destination-number">
-          DESTINATION 01
+        <div class="brand-main">
+          WORKSHOP
         </div>
 
+        <div class="brand-sub">
 
-        <div class="destination-content">
+          <span class="line"></span>
 
-          <div class="destination-kicker">
-            The Classic
-          </div>
-
-          <h2>
-            The<br>
-            Origin
-          </h2>
-
-          <p>
-            The roots. The craft. The values.
-            Where everything begins.
-          </p>
-
-          <span class="destination-button">
-            Enter The Origin →
+          <span>
+            THE CODE
           </span>
+
+          <span class="line"></span>
 
         </div>
 
       </a>
 
+    </header>
 
-      <!-- THE URBAN -->
 
-      <a href="urban.html" class="destination">
 
-        <div class="destination-number">
-          DESTINATION 02
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main>
+
+
+      <!-- INTRO -->
+
+      <section class="intro">
+
+        <div class="eyebrow">
+          THE CODE
         </div>
 
 
-        <div class="destination-content">
+        <h1>
+          DISCOVER<br>
+          YOUR CODE
+        </h1>
 
-          <div class="destination-kicker">
-            The New Generation
+
+        <p>
+          Two worlds. One Code. Choose the destination that represents
+          the way you see yourself.
+        </p>
+
+      </section>
+
+
+
+      <!-- DESTINATIONS -->
+
+      <section class="destinations">
+
+
+        <!-- =============================================
+             DESTINATION 01 — THE ORIGIN
+             ============================================= -->
+
+        <a
+          href="origin.html"
+          class="destination origin"
+          aria-label="Enter The Origin"
+        >
+
+          <div class="number">
+            DESTINATION 01
           </div>
 
-          <h2>
-            The<br>
-            Urban
-          </h2>
 
-          <p>
-            The city. The movement. The attitude.
-            A new generation defining its own Code.
-          </p>
+          <div class="destination-content">
 
-          <span class="destination-button">
-            Enter The Urban →
-          </span>
-
-        </div>
-
-      </a>
+            <div class="subtitle">
+              THE CLASSIC
+            </div>
 
 
-    </section>
+            <h2>
+              THE<br>
+              ORIGIN
+            </h2>
 
 
-  </main>
+            <p>
+              The roots. The craft. The values.
+              Where everything begins.
+            </p>
 
 
-  <!-- FOOTER -->
+            <div class="enter">
 
-  <footer>
+              ENTER
 
-    <span>
-      © WORKSHOP — THE CODE
-    </span>
+              <span>
+                →
+              </span>
 
-    <a href="index.html">
-      Back to Workshop
-    </a>
+            </div>
 
-  </footer>
+          </div>
 
+        </a>
+
+
+
+        <!-- =============================================
+             DESTINATION 02 — THE URBAN
+             ============================================= -->
+
+        <a
+          href="urban.html"
+          class="destination urban"
+          aria-label="Enter The Urban"
+        >
+
+          <div class="number">
+            DESTINATION 02
+          </div>
+
+
+          <div class="destination-content">
+
+            <div class="subtitle">
+              THE NEW GENERATION
+            </div>
+
+
+            <h2>
+              THE<br>
+              URBAN
+            </h2>
+
+
+            <p>
+              The city. The movement. The attitude.
+              A new generation defining its own Code.
+            </p>
+
+
+            <div class="enter">
+
+              ENTER
+
+              <span>
+                →
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer>
+
+      BUILT BY WORK. DEFINED BY VALUES.
+
+    </footer>
+
+
+  </div>
 
 </body>
 
