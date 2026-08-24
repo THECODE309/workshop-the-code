@@ -1,1 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>CODE DESTINATIONS — WORKSHOP | THE CODE</title>
+
+  <meta
+    name="description"
+    content="CODE DESTINATIONS — WORKSHOP | THE CODE"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --off-white: #f2f0ea;
+      --brown: #4b2e23;
+      --grey: #8c8983;
+      --line: rgba(242, 240, 234, 0.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(11, 11, 11, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 0.9;
+    }
+
+    .brand-workshop {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .brand-code {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      margin-top: 5px;
+      opacity: 0.65;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.25s ease;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 7vw 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(11,11,11,0.25),
+          rgba(11,11,11,0.92)
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: var(--grey);
+    }
+
+    h1 {
+      font-size: clamp(64px, 12vw, 170px);
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      margin-top: 35px;
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(242,240,234,0.72);
+    }
+
+    .hero-line {
+      margin-top: 55px;
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      padding: 120px 7vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .intro-text {
+      max-width: 700px;
+    }
+
+    .intro-text h2 {
+      font-size: clamp(32px, 5vw, 68px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      margin-bottom: 35px;
+    }
+
+    .intro-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(242,240,234,0.68);
+      max-width: 620px;
+    }
+
+    /* =========================
+       DESTINATIONS
+    ========================= */
+
+    .destinations {
+      padding: 120px 7vw;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 65px;
+      gap: 30px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 7vw, 90px);
+      line-height: 0.85;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--grey);
+    }
+
+    .destination-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--line);
+    }
+
+    .destination {
+      min-height: 420px;
+      padding: 40px;
+      background: #111111;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .destination:hover {
+      background: #171717;
+    }
+
+    .destination-number {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--grey);
+    }
+
+    .destination-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .destination h3 {
+      font-size: clamp(36px, 5vw, 65px);
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: -0.045em;
+      margin-bottom: 20px;
+    }
+
+    .destination p {
+      max-width: 480px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(242,240,234,0.6);
+    }
+
+    .destination-link {
+      margin-top: 28px;
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(242,240,234,0.45);
+      padding-bottom: 7px;
+    }
+
+    /* =========================
+       MANIFESTO
+    ========================= */
+
+    .manifesto {
+      padding: 150px 7vw;
+      background: var(--off-white);
+      color: var(--black);
+    }
+
+    .manifesto-inner {
+      max-width: 1200px;
+    }
+
+    .manifesto-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 45px;
+      opacity: 0.5;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(42px, 8vw, 105px);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -0.055em;
+      max-width: 1100px;
+    }
+
+    .manifesto-signature {
+      margin-top: 55px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 50px 7vw;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer span,
+    footer a {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(242,240,234,0.55);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        height: 62px;
+        padding: 0 20px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 8px;
+      }
+
+      .hero {
+        padding: 120px 25px 65px;
+      }
+
+      .intro {
+        padding: 80px 25px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .destinations {
+        padding: 80px 25px;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .destination-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .destination {
+        min-height: 350px;
+        padding: 30px;
+      }
+
+      .manifesto {
+        padding: 90px 25px;
+      }
+
+      footer {
+        padding: 35px 25px;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <a href="index.html" class="brand">
+      <span class="brand-workshop">WORKSHOP</span>
+      <span class="brand-code">THE CODE</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Collection</a>
+      <a href="manifesto.html">Manifesto</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          WORKSHOP — THE CODE
+        </div>
+
+        <h1>
+          CODE<br>
+          DESTINATIONS
+        </h1>
+
+        <p class="hero-subtitle">
+          The places, experiences and stories where THE CODE becomes real.
+        </p>
+
+        <div class="hero-line"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRO
+    ========================= -->
+
+    <section class="intro">
+
+      <div class="intro-label">
+        THE CODE / DESTINATIONS
+      </div>
+
+      <div class="intro-text">
+
+        <h2>
+          Every Code<br>
+          Has A Place.
+        </h2>
+
+        <p>
+          THE CODE is not only something you wear.
+          It represents a way of understanding work,
+          friendship, loyalty, discipline and life.
+          CODE DESTINATIONS connects those values with
+          the places and experiences that give them meaning.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESTINATIONS
+    ========================= -->
+
+    <section class="destinations">
+
+      <div class="section-header">
+
+        <div>
+          <div class="section-number">
+            001 — 010
+          </div>
+
+          <h2 class="section-title">
+            Destinations
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="destination-grid">
+
+
+        <!-- DESTINATION 001 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 001
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              001
+            </h3>
+
+            <p>
+              Discover the story behind the first Code.
+            </p>
+
+            <a href="code001.html" class="destination-link">
+              Enter Code 001 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 002 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 002
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              002
+            </h3>
+
+            <p>
+              Discover the story behind the second Code.
+            </p>
+
+            <a href="code002.html" class="destination-link">
+              Enter Code 002 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 003 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 003
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              003
+            </h3>
+
+            <p>
+              Discover the story behind the third Code.
+            </p>
+
+            <a href="code003.html" class="destination-link">
+              Enter Code 003 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 004 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 004
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              004
+            </h3>
+
+            <p>
+              Discover the story behind CODE 004.
+            </p>
+
+            <a href="code004.html" class="destination-link">
+              Enter Code 004 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 005 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 005
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              005
+            </h3>
+
+            <p>
+              Discover the story behind CODE 005.
+            </p>
+
+            <a href="code005.html" class="destination-link">
+              Enter Code 005 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 006 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 006
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              006
+            </h3>
+
+            <p>
+              Discover the story behind CODE 006.
+            </p>
+
+            <a href="code006.html" class="destination-link">
+              Enter Code 006 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 007 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 007
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              007
+            </h3>
+
+            <p>
+              Discover the story behind CODE 007.
+            </p>
+
+            <a href="code007.html" class="destination-link">
+              Enter Code 007 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 008 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 008
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              008
+            </h3>
+
+            <p>
+              Discover the story behind CODE 008.
+            </p>
+
+            <a href="code008.html" class="destination-link">
+              Enter Code 008 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 009 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 009
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              009
+            </h3>
+
+            <p>
+              Discover the story behind CODE 009.
+            </p>
+
+            <a href="code009.html" class="destination-link">
+              Enter Code 009 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- DESTINATION 010 -->
+
+        <article class="destination">
+
+          <div class="destination-number">
+            CODE 010
+          </div>
+
+          <div class="destination-content">
+
+            <h3>
+              CODE<br>
+              010
+            </h3>
+
+            <p>
+              Discover the story behind CODE 010.
+            </p>
+
+            <a href="code010.html" class="destination-link">
+              Enter Code 010 →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MANIFESTO
+    ========================= -->
+
+    <section class="manifesto">
+
+      <div class="manifesto-inner">
+
+        <div class="manifesto-label">
+          WORKSHOP — THE CODE
+        </div>
+
+        <h2>
+          BUILT BY WORK.<br>
+          DEFINED BY VALUES.
+        </h2>
+
+        <div class="manifesto-signature">
+          THE CODE — WORKSHOP
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <span>
+      © WORKSHOP — THE CODE
+    </span>
+
+    <a href="index.html">
+      Back to Workshop
+    </a>
+
+  </footer>
+
+
+</body>
+</html>
