@@ -2,661 +2,949 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>THE CODE — Discover Your Code</title>
+<meta charset="UTF-8">
 
-  <meta
-    name="description"
-    content="THE CODE. Two worlds. One Code. Discover THE ORIGIN and THE URBAN."
-  >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>WORKSHOP — THE CODE | Discover Your Code</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+<meta
+name="description"
+content="Two worlds. One Code. Discover The Origin and The Urban."
+>
 
-  <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    /* =====================================================
-       THE CODE — DISCOVER YOUR CODE
-       PAGE 03
-       ===================================================== */
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+>
 
-    :root {
-      --black: #0d0d0d;
-      --black-soft: #111111;
-      --white: #f5f3ef;
-      --muted: #aaa7a0;
-      --brown: #8a5a38;
-      --line: rgba(245,243,239,.20);
-    }
+<style>
 
+/* =========================================================
+   WORKSHOP — THE CODE
+   DISCOVER YOUR CODE
+   ========================================================= */
 
-    /* RESET
-       ===================================================== */
+:root {
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    --black: #0b0b0b;
+
+    --black-soft: #111111;
+
+    --white: #f4f2ed;
+
+    --grey: #a8a6a1;
+
+    --brown: #8b5838;
+
+    --line: rgba(244,242,237,.22);
+
+}
 
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
 
 
-    body {
-      min-height: 100vh;
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
+html {
+
+    scroll-behavior: smooth;
+
+}
 
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+body {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: 'Inter', sans-serif;
+
+    overflow-x: hidden;
+
+}
 
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
 
 
-    /* =====================================================
-       HEADER
-       ===================================================== */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 34px 5vw;
-      z-index: 10;
-    }
+header {
 
+    position: absolute;
 
-    .brand {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    top: 0;
 
+    left: 0;
 
-    .brand-main {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: .20em;
-      line-height: 1;
-    }
+    width: 100%;
+
+    padding: 30px 4vw;
+
+    z-index: 20;
+
+}
 
 
-    .brand-sub {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 9px;
-    }
+.brand {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+}
 
 
-    .brand-sub .line {
-      width: 38px;
-      height: 1px;
-      background: var(--brown);
-    }
+.brand-main {
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: .25em;
+
+}
 
 
-    .brand-sub span:last-child {
-      font-size: .62rem;
-      letter-spacing: .35em;
-      color: var(--brown);
-    }
+.brand-sub {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+
+}
 
 
-    /* =====================================================
-       INTRO
-       ===================================================== */
+.brand-sub span {
 
-    .intro {
-      text-align: center;
-      padding: 135px 24px 70px;
-    }
+    font-size: .60rem;
 
+    letter-spacing: .30em;
 
-    .eyebrow {
-      font-size: .62rem;
-      letter-spacing: .42em;
-      color: var(--brown);
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
+}
 
 
-    h1 {
-      font-size: clamp(4rem, 9vw, 8rem);
-      line-height: .88;
-      font-weight: 800;
-      letter-spacing: -.035em;
-      text-transform: uppercase;
-    }
+.brand-line {
+
+    width: 38px;
+
+    height: 1px;
+
+    background: var(--brown);
+
+}
 
 
-    .intro p {
-      max-width: 620px;
-      margin: 30px auto 0;
-      color: var(--muted);
-      font-size: .90rem;
-      line-height: 1.7;
-      font-weight: 300;
-    }
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+
+    min-height: 470px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+
+        120px 30px 55px;
+
+}
 
 
-    /* =====================================================
-       DESTINATIONS
-       ===================================================== */
+.eyebrow {
+
+    color: var(--brown);
+
+    font-size: .60rem;
+
+    letter-spacing: .45em;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+
+        clamp(4.5rem, 9vw, 9rem);
+
+    line-height: .86;
+
+    font-weight: 900;
+
+    letter-spacing: -.055em;
+
+    text-transform: uppercase;
+
+}
+
+
+.hero-divider {
+
+    width: 265px;
+
+    height: 1px;
+
+    background: var(--brown);
+
+    margin: 26px auto 15px;
+
+}
+
+
+.hero-sub {
+
+    color: var(--grey);
+
+    font-size: .88rem;
+
+    font-weight: 300;
+
+    margin-bottom: 6px;
+
+}
+
+
+.hero-description {
+
+    color: var(--grey);
+
+    font-size: .82rem;
+
+    font-weight: 300;
+
+}
+
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.destinations {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.destination {
+
+    position: relative;
+
+    min-height: 590px;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.destination:first-child {
+
+    border-right: 1px solid var(--line);
+
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.destination-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+
+        transform .8s ease,
+
+        filter .8s ease;
+
+}
+
+
+.origin-image {
+
+    background-image:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(10,10,10,.72) 0%,
+
+            rgba(10,10,10,.35) 48%,
+
+            rgba(10,10,10,.12) 100%
+
+        ),
+
+        linear-gradient(
+
+            0deg,
+
+            rgba(10,10,10,.60),
+
+            rgba(10,10,10,.05)
+
+        ),
+
+        url("../assets/origin.jpg");
+
+}
+
+
+.urban-image {
+
+    background-image:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(8,8,8,.68) 0%,
+
+            rgba(8,8,8,.32) 48%,
+
+            rgba(8,8,8,.10) 100%
+
+        ),
+
+        linear-gradient(
+
+            0deg,
+
+            rgba(8,8,8,.55),
+
+            rgba(8,8,8,.05)
+
+        ),
+
+        url("../assets/urban.jpg");
+
+}
+
+
+.destination:hover .destination-image {
+
+    transform: scale(1.025);
+
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.destination-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    height: 100%;
+
+    min-height: 590px;
+
+    padding: 38px 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+.destination-top {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+.destination-number {
+
+    font-size: .58rem;
+
+    letter-spacing: .38em;
+
+    color: var(--white);
+
+    margin-bottom: 25px;
+
+}
+
+
+.destination-type {
+
+    font-size: .68rem;
+
+    letter-spacing: .28em;
+
+    color: var(--brown);
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+}
+
+
+.destination-title {
+
+    font-size:
+
+        clamp(3.5rem, 5vw, 5.7rem);
+
+    line-height: .82;
+
+    font-weight: 900;
+
+    letter-spacing: -.055em;
+
+    text-transform: uppercase;
+
+}
+
+
+.destination-description {
+
+    max-width: 280px;
+
+    color: var(--white);
+
+    font-size: .83rem;
+
+    line-height: 1.65;
+
+    font-weight: 300;
+
+    margin-top: 28px;
+
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.enter-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: fit-content;
+
+    min-width: 240px;
+
+    padding: 17px 24px;
+
+    border: 1px solid var(--brown);
+
+    color: var(--white);
+
+    background: rgba(0,0,0,.15);
+
+    font-size: .62rem;
+
+    letter-spacing: .25em;
+
+    text-transform: uppercase;
+
+    transition:
+
+        background .3s ease,
+
+        color .3s ease,
+
+        border-color .3s ease;
+
+}
+
+
+.enter-button span {
+
+    margin-left: 14px;
+
+    font-size: 1rem;
+
+    transition:
+
+        transform .3s ease;
+
+}
+
+
+.enter-button:hover {
+
+    background: var(--brown);
+
+    border-color: var(--brown);
+
+}
+
+
+.enter-button:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    padding: 28px;
+
+    text-align: center;
+
+    color: #686661;
+
+    font-size: .52rem;
+
+    letter-spacing: .28em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
 
     .destinations {
-      width: 100%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
 
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .destination:first-child {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--line);
+
     }
 
 
     .destination {
-      position: relative;
 
-      min-height: 470px;
+        min-height: 600px;
 
-      padding: 42px 48px 50px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      overflow: hidden;
-
-      background: var(--black);
-
-      transition:
-        background .45s ease,
-        transform .45s ease;
     }
 
-
-    .destination + .destination {
-      border-left: 1px solid var(--line);
-    }
-
-
-    .destination:hover {
-      background: var(--black-soft);
-    }
-
-
-    /* =====================================================
-       DESTINATION NUMBER
-       ===================================================== */
-
-    .number {
-      font-size: .62rem;
-      letter-spacing: .30em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-
-    /* =====================================================
-       DESTINATION CONTENT
-       ===================================================== */
 
     .destination-content {
-      max-width: 600px;
+
+        min-height: 600px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding: 25px 22px;
+
     }
 
 
-    .subtitle {
-      font-size: .62rem;
-      letter-spacing: .30em;
-      color: var(--brown);
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
+    .hero {
 
-
-    .destination h2 {
-      font-size: clamp(4rem, 7vw, 7rem);
-      line-height: .82;
-      font-weight: 800;
-      letter-spacing: -.055em;
-
-      margin: 18px 0 28px;
-
-      transition:
-        transform .45s ease,
-        letter-spacing .45s ease;
-    }
-
-
-    .destination:hover h2 {
-      transform: translateX(8px);
-      letter-spacing: -.045em;
-    }
-
-
-    .destination p {
-      max-width: 500px;
-
-      color: var(--muted);
-
-      font-size: .90rem;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-
-    /* =====================================================
-       ENTER
-       ===================================================== */
-
-    .enter {
-      margin-top: 35px;
-
-      font-size: .62rem;
-      letter-spacing: .28em;
-
-      color: var(--brown);
-
-      display: flex;
-      align-items: center;
-
-      gap: 14px;
-
-      text-transform: uppercase;
-    }
-
-
-    .enter span {
-      font-size: 1rem;
-
-      transition:
-        transform .3s ease;
-    }
-
-
-    .destination:hover .enter span {
-      transform: translateX(7px);
-    }
-
-
-    /* =====================================================
-       SUBTLE HOVER LIGHT
-       ===================================================== */
-
-    .destination::after {
-      content: "";
-
-      position: absolute;
-
-      width: 280px;
-      height: 280px;
-
-      border-radius: 50%;
-
-      background: rgba(138,90,56,.035);
-
-      right: -120px;
-      bottom: -120px;
-
-      opacity: 0;
-
-      transition:
-        opacity .5s ease,
-        transform .5s ease;
-    }
-
-
-    .destination:hover::after {
-      opacity: 1;
-      transform: scale(1.25);
-    }
-
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
-
-    footer {
-      margin-top: auto;
-
-      padding: 42px 5vw 30px;
-
-      text-align: center;
-
-      color: #77736d;
-
-      font-size: .58rem;
-
-      letter-spacing: .28em;
-
-      text-transform: uppercase;
-    }
-
-
-    /* =====================================================
-       MOBILE
-       ===================================================== */
-
-    @media (max-width: 800px) {
-
-      header {
-        padding: 26px 7vw;
-      }
-
-
-      .brand-main {
-        font-size: 1.05rem;
-      }
-
-
-      .intro {
-        padding: 125px 24px 60px;
-      }
-
-
-      h1 {
-        font-size: clamp(3.5rem, 16vw, 6rem);
-      }
-
-
-      .intro p {
-        font-size: .82rem;
-        line-height: 1.7;
-      }
-
-
-      .destinations {
-        width: 100%;
-        grid-template-columns: 1fr;
-      }
-
-
-      .destination {
         min-height: 430px;
 
-        padding: 38px 28px 45px;
-      }
+        padding:
 
-
-      .destination + .destination {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-      }
-
-
-      .destination h2 {
-        font-size: clamp(4rem, 18vw, 7rem);
-      }
-
-
-      .destination p {
-        font-size: .82rem;
-      }
-
-
-      .enter {
-        margin-top: 28px;
-      }
-
-
-      footer {
-        padding: 35px 20px 25px;
-        font-size: .52rem;
-      }
+            115px 20px 45px;
 
     }
 
 
-    /* =====================================================
-       VERY SMALL SCREENS
-       ===================================================== */
+    .hero h1 {
 
-    @media (max-width: 420px) {
-
-      .intro {
-        padding-top: 120px;
-      }
-
-
-      h1 {
-        font-size: 3.5rem;
-      }
-
-
-      .destination {
-        min-height: 400px;
-      }
-
-
-      .destination h2 {
-        font-size: 4.2rem;
-      }
+        font-size: 4rem;
 
     }
 
-  </style>
+
+    .hero-divider {
+
+        width: 190px;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 310px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .destination {
+
+        min-height: 650px;
+
+    }
+
+
+    .destination-content {
+
+        min-height: 650px;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .destination-title {
+
+        font-size: 4rem;
+
+    }
+
+
+    .destination-description {
+
+        max-width: 240px;
+
+    }
+
+
+    .enter-button {
+
+        min-width: 220px;
+
+    }
+
+}
+
+</style>
 
 </head>
 
 
 <body>
 
-  <div class="page">
 
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-    <!-- =================================================
-         HEADER
-         ================================================= -->
+<header>
 
-    <header>
-
-      <a
-        href="index.html"
-        class="brand"
-        aria-label="WORKSHOP THE CODE home"
-      >
+    <a href="index.html" class="brand">
 
         <div class="brand-main">
-          WORKSHOP
+
+            WORKSHOP
+
         </div>
+
 
         <div class="brand-sub">
 
-          <span class="line"></span>
+            <span class="brand-line"></span>
 
-          <span>
-            THE CODE
-          </span>
+            <span>THE CODE</span>
 
-          <span class="line"></span>
+            <span class="brand-line"></span>
 
         </div>
 
-      </a>
+    </a>
 
-    </header>
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+
+        THE CODE
+
+    </div>
+
+
+    <h1>
+
+        DISCOVER<br>
+
+        YOUR CODE
+
+    </h1>
+
+
+    <div class="hero-divider"></div>
+
+
+    <p class="hero-sub">
+
+        Two worlds. One Code.
+
+    </p>
+
+
+    <p class="hero-description">
+
+        Choose the destination that represents the way you see yourself.
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESTINATIONS
+     ===================================================== -->
+
+<section class="destinations">
+
+
+    <!-- =================================================
+         THE ORIGIN
+         ================================================= -->
+
+    <article class="destination">
+
+
+        <div class="destination-image origin-image"></div>
+
+
+        <div class="destination-content">
+
+
+            <div class="destination-top">
+
+
+                <div class="destination-number">
+
+                    DESTINATION 01
+
+                </div>
+
+
+                <div class="destination-type">
+
+                    THE CLASSIC
+
+                </div>
+
+
+                <h2 class="destination-title">
+
+                    THE<br>
+
+                    ORIGIN
+
+                </h2>
+
+
+                <p class="destination-description">
+
+                    The roots.<br>
+
+                    The craft.<br>
+
+                    The values.<br>
+
+                    Where everything begins.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="origin.html"
+                class="enter-button"
+            >
+
+                ENTER THE ORIGIN
+
+                <span>→</span>
+
+            </a>
+
+
+        </div>
+
+    </article>
 
 
 
     <!-- =================================================
-         MAIN
+         THE URBAN
          ================================================= -->
 
-    <main>
+    <article class="destination">
 
 
-      <!-- INTRO -->
+        <div class="destination-image urban-image"></div>
 
-      <section class="intro">
 
-        <div class="eyebrow">
-          THE CODE
+        <div class="destination-content">
+
+
+            <div class="destination-top">
+
+
+                <div class="destination-number">
+
+                    DESTINATION 02
+
+                </div>
+
+
+                <div class="destination-type">
+
+                    THE NEW GENERATION
+
+                </div>
+
+
+                <h2 class="destination-title">
+
+                    THE<br>
+
+                    URBAN
+
+                </h2>
+
+
+                <p class="destination-description">
+
+                    The city.<br>
+
+                    The movement.<br>
+
+                    The attitude.<br>
+
+                    A new generation defining its own Code.
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="urban.html"
+                class="enter-button"
+            >
+
+                ENTER THE URBAN
+
+                <span>→</span>
+
+            </a>
+
+
         </div>
 
-
-        <h1>
-          DISCOVER<br>
-          YOUR CODE
-        </h1>
+    </article>
 
 
-        <p>
-          Two worlds. One Code. Choose the destination that represents
-          the way you see yourself.
-        </p>
-
-      </section>
+</section>
 
 
 
-      <!-- DESTINATIONS -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
-      <section class="destinations">
+<footer>
 
+    BUILT BY WORK. DEFINED BY VALUES.
 
-        <!-- =============================================
-             DESTINATION 01 — THE ORIGIN
-             ============================================= -->
+</footer>
 
-        <a
-          href="origin.html"
-          class="destination origin"
-          aria-label="Enter The Origin"
-        >
-
-          <div class="number">
-            DESTINATION 01
-          </div>
-
-
-          <div class="destination-content">
-
-            <div class="subtitle">
-              THE CLASSIC
-            </div>
-
-
-            <h2>
-              THE<br>
-              ORIGIN
-            </h2>
-
-
-            <p>
-              The roots. The craft. The values.
-              Where everything begins.
-            </p>
-
-
-            <div class="enter">
-
-              ENTER
-
-              <span>
-                →
-              </span>
-
-            </div>
-
-          </div>
-
-        </a>
-
-
-
-        <!-- =============================================
-             DESTINATION 02 — THE URBAN
-             ============================================= -->
-
-        <a
-          href="urban.html"
-          class="destination urban"
-          aria-label="Enter The Urban"
-        >
-
-          <div class="number">
-            DESTINATION 02
-          </div>
-
-
-          <div class="destination-content">
-
-            <div class="subtitle">
-              THE NEW GENERATION
-            </div>
-
-
-            <h2>
-              THE<br>
-              URBAN
-            </h2>
-
-
-            <p>
-              The city. The movement. The attitude.
-              A new generation defining its own Code.
-            </p>
-
-
-            <div class="enter">
-
-              ENTER
-
-              <span>
-                →
-              </span>
-
-            </div>
-
-          </div>
-
-        </a>
-
-
-      </section>
-
-
-    </main>
-
-
-
-    <!-- =================================================
-         FOOTER
-         ================================================= -->
-
-    <footer>
-
-      BUILT BY WORK. DEFINED BY VALUES.
-
-    </footer>
-
-
-  </div>
 
 </body>
 
