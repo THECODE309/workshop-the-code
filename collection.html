@@ -1,328 +1,1391 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>THE CODE | Collection</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>WORKSHOP — THE CODE | The Codes</title>
 
-<style>
+    <meta
+        name="description"
+        content="THE CODE. Ten principles. One identity."
+    >
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-body{
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
 
-background:#090909;
-font-family:Montserrat,sans-serif;
-color:white;
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
-}
 
-header{
+    <style>
 
-padding:80px 30px 40px;
+        /* =====================================================
+           WORKSHOP — THE CODE
+           COLLECTION / 10 CODES
+           OPTION 01 — MINIMAL
+           ===================================================== */
 
-text-align:center;
+        :root {
 
-}
+            --black: #0c0c0c;
 
-header h1{
+            --black-soft: #131313;
 
-font-size:64px;
+            --white: #f3f1ec;
 
-letter-spacing:10px;
+            --muted: #9e9b95;
 
-margin-bottom:20px;
+            --brown: #8a5738;
 
-}
+            --line: rgba(243, 241, 236, 0.18);
 
-header p{
+        }
 
-font-size:18px;
 
-color:#bfbfbf;
+        /* =====================================================
+           RESET
+           ===================================================== */
 
-}
+        * {
 
-.grid{
+            margin: 0;
 
-width:90%;
-max-width:1400px;
+            padding: 0;
 
-margin:auto;
+            box-sizing: border-box;
 
-display:grid;
+        }
 
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
-gap:35px;
+        html {
 
-padding-bottom:80px;
+            scroll-behavior: smooth;
 
-}
+        }
 
-.card{
 
-border:1px solid rgba(122,75,50,.45);
+        body {
 
-padding:45px;
+            min-height: 100vh;
 
-text-align:center;
+            background: var(--black);
 
-transition:.35s;
+            color: var(--white);
 
-background:#121212;
+            font-family: 'Inter', sans-serif;
 
-cursor:pointer;
+            overflow-x: hidden;
 
-}
+        }
 
-.card:hover{
 
-transform:translateY(-8px);
+        a {
 
-border-color:#7A4B32;
+            color: inherit;
 
-box-shadow:0 20px 40px rgba(0,0,0,.4);
+            text-decoration: none;
 
-}
+        }
 
-.number{
 
-font-size:54px;
+        /* =====================================================
+           HEADER
+           ===================================================== */
 
-font-weight:700;
+        header {
 
-color:#7A4B32;
+            position: absolute;
 
-margin-bottom:20px;
+            top: 0;
 
-}
+            left: 0;
 
-.title{
+            width: 100%;
 
-font-size:22px;
+            padding: 30px 4vw;
 
-letter-spacing:3px;
+            z-index: 20;
 
-margin-bottom:18px;
+        }
 
-}
 
-.desc{
+        .brand {
 
-color:#bdbdbd;
+            display: inline-flex;
 
-line-height:1.7;
+            flex-direction: column;
 
-font-size:15px;
+        }
 
-}
 
-footer{
+        .brand-main {
 
-text-align:center;
+            font-size: 1.25rem;
 
-padding:60px;
+            font-weight: 800;
 
-color:#777;
+            letter-spacing: .25em;
 
-font-size:13px;
+            line-height: 1;
 
-letter-spacing:3px;
+        }
 
-}
-/* DISCOVER YOUR CODE */
 
-.discover-link {
-    width: 100%;
-    text-align: center;
-    margin: 35px 0 55px;
-}
+        .brand-sub {
 
-.discover-link a {
-    display: inline-block;
+            display: flex;
 
-    padding: 16px 34px;
+            align-items: center;
 
-    border: 1px solid #6b432d;
+            gap: 10px;
 
-    color: #6b432d;
+            margin-top: 8px;
 
-    font-size: 10px;
+        }
 
-    font-weight: 600;
 
-    letter-spacing: 3px;
+        .brand-sub span {
 
-    text-decoration: none;
+            font-size: .60rem;
 
-    text-transform: uppercase;
+            letter-spacing: .30em;
 
-    transition: all 0.3s ease;
-}
+        }
 
-.discover-link a:hover {
-    background: #6b432d;
-    color: #090909;
-}
-</style>
+
+        .brand-line {
+
+            width: 38px;
+
+            height: 1px;
+
+            background: var(--brown);
+
+        }
+
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+
+        .hero {
+
+            text-align: center;
+
+            padding:
+
+                135px 25px 75px;
+
+        }
+
+
+        .eyebrow {
+
+            color: var(--brown);
+
+            font-size: .60rem;
+
+            letter-spacing: .42em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+
+                clamp(4rem, 8vw, 7rem);
+
+            font-weight: 900;
+
+            line-height: .88;
+
+            letter-spacing: -.055em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .hero-line {
+
+            width: 115px;
+
+            height: 1px;
+
+            background: var(--brown);
+
+            margin: 28px auto 20px;
+
+        }
+
+
+        .hero p {
+
+            color: var(--muted);
+
+            font-size: .88rem;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           COLLECTION
+           ===================================================== */
+
+        .collection-wrap {
+
+            width: min(1450px, 92vw);
+
+            margin: 0 auto 70px;
+
+        }
+
+
+        .codes-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(5, minmax(0, 1fr));
+
+            gap: 14px;
+
+        }
+
+
+        /* =====================================================
+           CARD
+           ===================================================== */
+
+        .code-card {
+
+            position: relative;
+
+            min-height: 265px;
+
+            border: 1px solid var(--line);
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+
+                    circle at 70% 30%,
+
+                    rgba(138, 87, 56, .12),
+
+                    transparent 42%
+
+                ),
+
+                linear-gradient(
+
+                    145deg,
+
+                    #151515,
+
+                    #0d0d0d
+
+                );
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 22px;
+
+            transition:
+
+                transform .35s ease,
+
+                border-color .35s ease,
+
+                background .35s ease;
+
+        }
+
+
+        .code-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+
+                rgba(138, 87, 56, .75);
+
+            background:
+
+                radial-gradient(
+
+                    circle at 70% 30%,
+
+                    rgba(138, 87, 56, .19),
+
+                    transparent 46%
+
+                ),
+
+                #111;
+
+        }
+
+
+        /* =====================================================
+           FADED SHIRT ARTWORK
+           ===================================================== */
+
+        .shirt-art {
+
+            position: absolute;
+
+            inset: 0;
+
+            padding: 25px;
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: flex-end;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+        }
+
+
+        .shirt-art-inner {
+
+            width: 78%;
+
+            margin-top: 12px;
+
+            text-align: left;
+
+            transform: translateX(5%);
+
+        }
+
+
+        .shirt-art span {
+
+            display: block;
+
+            color: rgba(243, 241, 236, .17);
+
+            font-size:
+
+                clamp(2.5rem, 4vw, 4.7rem);
+
+            font-weight: 900;
+
+            line-height: .82;
+
+            letter-spacing: -.05em;
+
+            text-transform: uppercase;
+
+            white-space: nowrap;
+
+        }
+
+
+        .shirt-art span.small {
+
+            margin-top: 12px;
+
+            color: rgba(243, 241, 236, .10);
+
+            font-size: .60rem;
+
+            font-weight: 500;
+
+            letter-spacing: .25em;
+
+        }
+
+
+        /* =====================================================
+           CARD OVERLAY
+           ===================================================== */
+
+        .code-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+
+                    180deg,
+
+                    rgba(12,12,12,.05) 0%,
+
+                    rgba(12,12,12,.15) 38%,
+
+                    rgba(12,12,12,.92) 100%
+
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+           ===================================================== */
+
+        .card-content {
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        .code-number {
+
+            color: var(--white);
+
+            font-size: .58rem;
+
+            letter-spacing: .25em;
+
+            font-weight: 500;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .code-name {
+
+            font-size: .96rem;
+
+            font-weight: 700;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .code-value {
+
+            color: var(--brown);
+
+            font-size: .58rem;
+
+            letter-spacing: .24em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .card-line {
+
+            width: 32px;
+
+            height: 1px;
+
+            background: var(--brown);
+
+            margin-top: 13px;
+
+            transition: width .3s ease;
+
+        }
+
+
+        .code-card:hover .card-line {
+
+            width: 58px;
+
+        }
+
+
+        /* =====================================================
+           FOOTER NAVIGATION
+           ===================================================== */
+
+        .collection-footer {
+
+            width: min(1450px, 92vw);
+
+            margin:
+
+                0 auto 35px;
+
+            padding-top: 28px;
+
+            border-top:
+
+                1px solid var(--line);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .footer-link {
+
+            color: var(--muted);
+
+            font-size: .58rem;
+
+            letter-spacing: .26em;
+
+            text-transform: uppercase;
+
+            transition: color .3s ease;
+
+        }
+
+
+        .footer-link:hover {
+
+            color: var(--white);
+
+        }
+
+
+        .footer-center {
+
+            color: #66635e;
+
+            font-size: .52rem;
+
+            letter-spacing: .25em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+
+            padding:
+
+                25px 20px 30px;
+
+            text-align: center;
+
+            color: #66635e;
+
+            font-size: .50rem;
+
+            letter-spacing: .28em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           TABLET
+           ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .codes-grid {
+
+                grid-template-columns:
+
+                    repeat(3, minmax(0, 1fr));
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding: 25px 22px;
+
+            }
+
+
+            .hero {
+
+                padding:
+
+                    120px 20px 55px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 4rem;
+
+            }
+
+
+            .codes-grid {
+
+                grid-template-columns:
+
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 10px;
+
+            }
+
+
+            .code-card {
+
+                min-height: 225px;
+
+                padding: 17px;
+
+                border-radius: 12px;
+
+            }
+
+
+            .shirt-art span {
+
+                font-size: 2.7rem;
+
+            }
+
+
+            .code-name {
+
+                font-size: .75rem;
+
+                letter-spacing: .10em;
+
+            }
+
+
+            .code-value {
+
+                font-size: .50rem;
+
+            }
+
+
+            .collection-footer {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                text-align: center;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL
+           ===================================================== */
+
+        @media (max-width: 420px) {
+
+            .codes-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .code-card {
+
+                min-height: 250px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<header>
 
-<h1>THE CODES</h1>
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-<p>
+    <header>
 
-Ten principles. One identity.
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="WORKSHOP THE CODE Home"
+        >
 
-</p>
+            <div class="brand-main">
+                WORKSHOP
+            </div>
 
-</header>
-<div class="discover-link">
+            <div class="brand-sub">
 
-  <a href="code-destinations.html">
-    DISCOVER YOUR CODE →
-  </a>
+                <span class="brand-line"></span>
 
-</div>
-<section class="grid">
+                <span>THE CODE</span>
 
-<a href="code001.html" class="card">
-<div class="number">001</div>
-<div class="title">CHARACTER</div>
-<div class="desc">
-Character is what remains when nobody is watching.
-</div>
-</a>
+                <span class="brand-line"></span>
 
-<a href="code002.html" class="card">
+            </div>
 
-<div class="number">002</div>
+        </a>
 
-<div class="title">SACRIFICE</div>
+    </header>
 
-<div class="desc">
-Success never comes without sacrifice.
-</div>
 
-</a>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-<a href="code003.html" class="card">
+    <section class="hero">
 
-<div class="number">003</div>
+        <div class="eyebrow">
+            THE CODE
+        </div>
 
-<div class="title">RESPECT</div>
+        <h1>
+            THE<br>
+            CODES
+        </h1>
 
-<div class="desc">
-Respect is earned through actions.
-</div>
+        <div class="hero-line"></div>
 
-</a>
+        <p>
+            Ten principles. One identity.
+        </p>
 
-<a href="code004.html" class="card">
+    </section>
 
-<div class="number">004</div>
 
-<div class="title">TRUE FRIEND</div>
+    <!-- =====================================================
+         CODES
+         ===================================================== -->
 
-<div class="desc">
-The only Code that cannot be bought.
-Only gifted.
-</div>
+    <main class="collection-wrap">
 
-</a>
+        <section class="codes-grid">
 
-<a href="code005.html" class="card">
 
-<div class="number">005</div>
+            <!-- =================================================
+                 CODE 001
+                 ================================================= -->
 
-<div class="title">RESPONSIBILITY</div>
+            <a
+                href="code001.html"
+                class="code-card"
+            >
 
-<div class="desc">
-Take ownership of every decision.
-</div>
+                <div class="shirt-art">
 
-</a>
+                    <div class="shirt-art-inner">
 
-<a href="code006.html" class="card">
+                        <span>BUILT</span>
 
-<div class="number">006</div>
+                        <span>BY WORK.</span>
 
-<div class="title">DISCIPLINE</div>
+                        <span>DEFINED</span>
 
-<div class="desc">
-Discipline creates freedom.
-</div>
+                        <span>BY VALUES.</span>
 
-</a>
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
 
-<a href="code007.html" class="card">
+                    </div>
 
-<div class="number">007</div>
+                </div>
 
-<div class="title">HUMILITY</div>
+                <div class="code-overlay"></div>
 
-<div class="desc">
-Stay humble. Keep learning.
-</div>
+                <div class="card-content">
 
-</a>
+                    <div class="code-number">
+                        001
+                    </div>
 
-<a href="code008.html" class="card">
+                    <div class="code-name">
+                        THE ORIGIN
+                    </div>
 
-<div class="number">008</div>
+                    <div class="code-value">
+                        WORK ETHIC
+                    </div>
 
-<div class="title">LOYALTY</div>
+                    <div class="card-line"></div>
 
-<div class="desc">
-Stand by your people.
-</div>
+                </div>
 
-</a>
+            </a>
 
-<a href="code009.html" class="card">
 
-<div class="number">009</div>
+            <!-- =================================================
+                 CODE 002
+                 ================================================= -->
 
-<div class="title">HONOUR</div>
+            <a
+                href="code002.html"
+                class="code-card"
+            >
 
-<div class="desc">
-Integrity above everything.
-</div>
+                <div class="shirt-art">
 
-</a>
+                    <div class="shirt-art-inner">
 
-<a href="code010.html" class="card">
+                        <span>THE</span>
 
-<div class="number">010</div>
+                        <span>SUCCESS</span>
 
-<div class="title">LEGACY</div>
+                        <span>WITHOUT</span>
 
-<div class="desc">
-Build something that outlives you.
-</div>
+                        <span>SACRIFICE.</span>
 
-</a>
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
 
-</section>
+                    </div>
 
-<footer>
+                </div>
 
-WORKSHOP — THE CODE
+                <div class="code-overlay"></div>
 
-</footer>
+                <div class="card-content">
+
+                    <div class="code-number">
+                        002
+                    </div>
+
+                    <div class="code-name">
+                        SACRIFICE
+                    </div>
+
+                    <div class="code-value">
+                        SACRIFICE
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 003
+                 ================================================= -->
+
+            <a
+                href="code003.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>DISCIPLINE</span>
+
+                        <span>HOY.</span>
+
+                        <span>LIBERTAD</span>
+
+                        <span>MAÑANA.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        003
+                    </div>
+
+                    <div class="code-name">
+                        DISCIPLINE
+                    </div>
+
+                    <div class="code-value">
+                        DISCIPLINE
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 004
+                 ================================================= -->
+
+            <a
+                href="code004.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>TRUE</span>
+
+                        <span>FRIEND.</span>
+
+                        <span class="small">
+                            I MET YOU AS A FRIEND.
+                        </span>
+
+                        <span class="small">
+                            I CHOOSE YOU AS A BROTHER.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        004
+                    </div>
+
+                    <div class="code-name">
+                        TRUE FRIEND
+                    </div>
+
+                    <div class="code-value">
+                        FRIENDSHIP
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 005
+                 ================================================= -->
+
+            <a
+                href="code005.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>LOYALTY</span>
+
+                        <span>IS NOT</span>
+
+                        <span>SAID.</span>
+
+                        <span>IT IS LIVED.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        005
+                    </div>
+
+                    <div class="code-name">
+                        LOYALTY
+                    </div>
+
+                    <div class="code-value">
+                        LOYALTY
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 006
+                 ================================================= -->
+
+            <a
+                href="code006.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>NO</span>
+
+                        <span>EXCUSES.</span>
+
+                        <span>ONLY</span>
+
+                        <span>SOLUTIONS.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        006
+                    </div>
+
+                    <div class="code-name">
+                        RESPONSIBILITY
+                    </div>
+
+                    <div class="code-value">
+                        RESPONSIBILITY
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 007
+                 ================================================= -->
+
+            <a
+                href="code007.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>RESPECT</span>
+
+                        <span>IS EARNED.</span>
+
+                        <span>NOT</span>
+
+                        <span>DEMANDED.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        007
+                    </div>
+
+                    <div class="code-name">
+                        RESPECT
+                    </div>
+
+                    <div class="code-value">
+                        RESPECT
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 008
+                 ================================================= -->
+
+            <a
+                href="code008.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>HUMBLE</span>
+
+                        <span>ALWAYS.</span>
+
+                        <span>HUNGRY</span>
+
+                        <span>TO IMPROVE.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        008
+                    </div>
+
+                    <div class="code-name">
+                        HUMILITY
+                    </div>
+
+                    <div class="code-value">
+                        HUMILITY
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 009
+                 ================================================= -->
+
+            <a
+                href="code009.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>NOT</span>
+
+                        <span>WHAT YOU</span>
+
+                        <span>LEAVE.</span>
+
+                        <span>WHAT YOU INSPIRE.</span>
+
+                        <span class="small">
+                            WORKSHOP — THE CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        009
+                    </div>
+
+                    <div class="code-name">
+                        LEGACY
+                    </div>
+
+                    <div class="code-value">
+                        LEGACY
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 CODE 010
+                 ================================================= -->
+
+            <a
+                href="code010.html"
+                class="code-card"
+            >
+
+                <div class="shirt-art">
+
+                    <div class="shirt-art-inner">
+
+                        <span>HONOR</span>
+
+                        <span>THE</span>
+
+                        <span>WORK.</span>
+
+                        <span class="small">
+                            VALUE THE ESSENTIAL.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="code-overlay"></div>
+
+                <div class="card-content">
+
+                    <div class="code-number">
+                        010
+                    </div>
+
+                    <div class="code-name">
+                        DIGNITY
+                    </div>
+
+                    <div class="code-value">
+                        DIGNITY
+                    </div>
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </a>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <div class="collection-footer">
+
+        <a
+            href="code-destinations.html"
+            class="footer-link"
+        >
+            ← BACK TO DESTINATIONS
+        </a>
+
+
+        <div class="footer-center">
+            10 CODES · ONE IDENTITY
+        </div>
+
+
+        <a
+            href="index.html"
+            class="footer-link"
+        >
+            WORKSHOP — THE CODE →
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        BUILT BY WORK. DEFINED BY VALUES.
+
+    </footer>
+
 
 </body>
 
