@@ -8,7 +8,8 @@
 
 <title>WORKSHOP — THE CODE | THE URBAN</title>
 
-<meta name="description" content="WORKSHOP — THE CODE. THE URBAN. A collection for those who choose their own path.">
+<meta name="description"
+content="WORKSHOP — THE CODE. THE URBAN. A collection about ambition, discipline, freedom and becoming.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,11 +18,511 @@
 
 <link rel="stylesheet" href="css/code.css">
 
+<style>
+
+/* =========================================================
+   THE URBAN — ENTRY PAGE
+   Brand Book palette
+   Vintage black / Terra brown / Aged cream
+   ========================================================= */
+
+:root {
+
+    --urban-black: #171614;
+    --urban-brown: #5A3928;
+    --urban-brown-light: #8A654D;
+    --urban-gold: #9A7957;
+    --urban-cream: #F1EEE7;
+    --urban-paper: #E8E2D7;
+
+}
+
+
+body {
+
+    background: var(--urban-cream);
+    color: var(--urban-black);
+
+}
+
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.urban-hero {
+
+    min-height: 72vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(241,238,231,0.92),
+            rgba(241,238,231,0.96)
+        ),
+        url("assets/web1.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+}
+
+
+.urban-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    bottom: 42px;
+
+    height: 1px;
+
+    background: var(--urban-brown);
+
+    opacity: .55;
+
+}
+
+
+.urban-intro {
+
+    max-width: 900px;
+
+    padding: 90px 0;
+
+}
+
+
+.urban-kicker {
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    color: var(--urban-brown);
+
+    font-size: 13px;
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.urban-kicker::before,
+.urban-kicker::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 1px;
+
+    background: var(--urban-brown);
+
+}
+
+
+.urban-intro h1 {
+
+    margin: 0;
+
+    font-size: clamp(70px, 11vw, 150px);
+
+    line-height: .82;
+
+    letter-spacing: -5px;
+
+    font-weight: 700;
+
+    color: var(--urban-black);
+
+}
+
+
+.urban-intro h1 span {
+
+    color: var(--urban-brown);
+
+}
+
+
+.urban-intro .intro-line {
+
+    width: 110px;
+    height: 3px;
+
+    background: var(--urban-brown);
+
+    margin: 38px 0;
+
+}
+
+
+.urban-intro p {
+
+    max-width: 670px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #403C37;
+
+}
+
+
+/* ---------------------------------------------------------
+   COLLECTION
+   --------------------------------------------------------- */
+
+.urban-selection {
+
+    padding: 90px 0 120px;
+
+    background: var(--urban-cream);
+
+}
+
+
+.urban-selection-header {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 55px;
+
+}
+
+
+.urban-selection-header h2 {
+
+    margin: 0;
+
+    font-size: 38px;
+
+    color: var(--urban-black);
+
+}
+
+
+.urban-selection-header span {
+
+    color: var(--urban-brown);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* ---------------------------------------------------------
+   GRID
+   --------------------------------------------------------- */
+
+.urban-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.urban-code {
+
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 38px;
+
+    text-decoration: none;
+
+    color: var(--urban-black);
+
+    background: #ECE7DD;
+
+    border: 1px solid rgba(90,57,40,.22);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+.urban-code::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: var(--urban-brown);
+
+}
+
+
+.urban-code:hover {
+
+    transform: translateY(-5px);
+
+    background: var(--urban-brown);
+
+    color: var(--urban-cream);
+
+}
+
+
+.urban-number {
+
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: var(--urban-brown);
+
+    margin-bottom: 42px;
+
+}
+
+
+.urban-code:hover .urban-number {
+
+    color: var(--urban-cream);
+
+}
+
+
+.urban-code h3 {
+
+    margin: 0 0 13px;
+
+    font-size: clamp(28px, 3vw, 43px);
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+}
+
+
+.urban-code p {
+
+    margin: 0;
+
+    max-width: 440px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: .78;
+
+}
+
+
+.urban-arrow {
+
+    position: absolute;
+
+    right: 30px;
+    bottom: 27px;
+
+    font-size: 25px;
+
+    color: var(--urban-brown);
+
+}
+
+
+.urban-code:hover .urban-arrow {
+
+    color: var(--urban-cream);
+
+}
+
+
+/* ---------------------------------------------------------
+   CODE 005 SECOND EXPRESSION
+   --------------------------------------------------------- */
+
+.urban-code.loyalty {
+
+    grid-column: span 2;
+
+    min-height: 210px;
+
+    background: #E2D9CB;
+
+}
+
+
+.urban-code.loyalty .loyalty-note {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: var(--urban-brown);
+
+}
+
+
+.urban-code.loyalty:hover .loyalty-note {
+
+    color: var(--urban-cream);
+
+}
+
+
+/* ---------------------------------------------------------
+   CLOSING
+   --------------------------------------------------------- */
+
+.urban-closing {
+
+    padding: 100px 0;
+
+    background: var(--urban-black);
+
+    color: var(--urban-cream);
+
+    text-align: center;
+
+}
+
+
+.urban-closing-line {
+
+    width: 80px;
+
+    height: 2px;
+
+    margin: 0 auto 35px;
+
+    background: var(--urban-brown-light);
+
+}
+
+
+.urban-closing p {
+
+    margin: 0 auto 25px;
+
+    max-width: 760px;
+
+    font-size: 28px;
+
+    line-height: 1.5;
+
+}
+
+
+.urban-closing strong {
+
+    color: #B08B68;
+
+}
+
+
+.urban-closing span {
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #B08B68;
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+    .urban-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .urban-code.loyalty {
+
+        grid-column: span 1;
+
+    }
+
+    .urban-intro {
+
+        padding: 70px 0;
+
+    }
+
+    .urban-selection-header {
+
+        display: block;
+
+    }
+
+    .urban-selection-header span {
+
+        display: block;
+
+        margin-top: 12px;
+
+    }
+
+    .urban-code {
+
+        min-height: 240px;
+
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
+
+<!-- ======================================================
+     NAVBAR
+     ====================================================== -->
 
 <header class="navbar">
 
@@ -35,11 +536,13 @@
 
 <div class="logo-sub">
 
-    <span class="line"></span>
+<span class="line"></span>
 
-    <span class="text">THE CODE</span>
+<span class="text">
+THE CODE
+</span>
 
-    <span class="line"></span>
+<span class="line"></span>
 
 </div>
 
@@ -48,22 +551,36 @@
 
 <nav>
 
-<a href="origin.html">THE ORIGIN</a>
+<a href="origin.html">
+THE ORIGIN
+</a>
 
-<a href="manifesto.html">MANIFESTO</a>
+<a href="urban.html">
+THE URBAN
+</a>
 
-<a href="collection.html">COLLECTION</a>
+<a href="manifesto.html">
+MANIFESTO
+</a>
+
+<a href="collection.html">
+COLLECTION
+</a>
 
 </nav>
 
 
 <div class="language">
 
-<a href="#">EN</a>
+<a href="#">
+EN
+</a>
 
 <span>/</span>
 
-<a href="#">ES</a>
+<a href="#">
+ES
+</a>
 
 </div>
 
@@ -73,37 +590,49 @@
 
 
 
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+
 <section class="urban-hero">
 
 <div class="container">
 
 <div class="urban-intro">
 
-<span class="section-title">
-THE CODE
-</span>
+
+<div class="urban-kicker">
+
+THE CODE — CHAPTER II
+
+</div>
+
 
 <h1>
-THE URBAN
+
+THE <span>URBAN</span>
+
 </h1>
 
-<div class="hero-line"></div>
+
+<div class="intro-line"></div>
+
 
 <p>
 
-A collection for those who are still becoming.
+You don't know where you're going yet.
 
-For those who choose their own path,
-take the wrong turn,
-fall,
-get back up
-and keep moving.
+And that's the point.
 
-THE URBAN is about ambition,
-discipline, freedom and the courage
-to challenge what is expected.
+THE URBAN is for the years when you are still
+finding your way, making mistakes, changing direction,
+falling down and getting back up.
+
+A collection built around the values that help us
+move forward before we know exactly where we're going.
 
 </p>
+
 
 </div>
 
@@ -113,26 +642,47 @@ to challenge what is expected.
 
 
 
-<section class="urban-codes">
+<!-- ======================================================
+     CODE SELECTION
+     ====================================================== -->
+
+<section class="urban-selection">
 
 <div class="container">
+
+
+<div class="urban-selection-header">
+
+<h2>
+SELECT YOUR CODE
+</h2>
+
+<span>
+7 CODES · 8 EXPRESSIONS
+</span>
+
+</div>
+
 
 <div class="urban-grid">
 
 
+<!-- CODE 001 -->
 
 <a href="urban-001.html" class="urban-code">
 
 <span class="urban-number">
-001
+CODE 001
 </span>
 
-<h2>
+<h3>
 OWN THE FUTURE
-</h2>
+</h3>
 
 <p>
 Sé dueño de tu futuro.
+El futuro no se espera.
+Se construye con las decisiones que tomas hoy.
 </p>
 
 <span class="urban-arrow">
@@ -142,19 +692,23 @@ Sé dueño de tu futuro.
 </a>
 
 
+
+<!-- CODE 002 -->
 
 <a href="urban-002.html" class="urban-code">
 
 <span class="urban-number">
-002
+CODE 002
 </span>
 
-<h2>
+<h3>
 EARN THE DAY
-</h2>
+</h3>
 
 <p>
 Gánate el día.
+Cada día cuenta.
+El resultado empieza con lo que haces hoy.
 </p>
 
 <span class="urban-arrow">
@@ -164,19 +718,23 @@ Gánate el día.
 </a>
 
 
+
+<!-- CODE 003 -->
 
 <a href="urban-003.html" class="urban-code">
 
 <span class="urban-number">
-003
+CODE 003
 </span>
 
-<h2>
+<h3>
 TRUST THE DETOUR
-</h2>
+</h3>
 
 <p>
 Confía en el desvío.
+No todos los caminos que parecen errores
+te llevan al lugar equivocado.
 </p>
 
 <span class="urban-arrow">
@@ -186,19 +744,23 @@ Confía en el desvío.
 </a>
 
 
+
+<!-- CODE 004 -->
 
 <a href="urban-004.html" class="urban-code">
 
 <span class="urban-number">
-004
+CODE 004
 </span>
 
-<h2>
+<h3>
 STAY THE COURSE
-</h2>
+</h3>
 
 <p>
 Mantén el rumbo.
+Aunque el camino se complique,
+sigue avanzando.
 </p>
 
 <span class="urban-arrow">
@@ -209,19 +771,27 @@ Mantén el rumbo.
 
 
 
-<a href="urban-005.html" class="urban-code">
+<!-- CODE 005 -->
+
+<a href="urban-005.html" class="urban-code loyalty">
 
 <span class="urban-number">
-005
+CODE 005 · LOYALTY
 </span>
 
-<h2>
+<h3>
 KEEP YOUR WORD
-</h2>
+</h3>
 
 <p>
 Mantén tu palabra.
+Porque cuando todo cambia,
+tu palabra sigue siendo tuya.
 </p>
+
+<span class="loyalty-note">
+FIRST EXPRESSION OF CODE 005
+</span>
 
 <span class="urban-arrow">
 →
@@ -231,19 +801,26 @@ Mantén tu palabra.
 
 
 
-<a href="urban-005a.html" class="urban-code">
+<!-- CODE 005A -->
+
+<a href="urban-005a.html" class="urban-code loyalty">
 
 <span class="urban-number">
-005A
+CODE 005A · LOYALTY
 </span>
 
-<h2>
+<h3>
 NEVER BETRAY TRUST
-</h2>
+</h3>
 
 <p>
 Nunca traiciones la confianza.
+La lealtad se demuestra cuando realmente importa.
 </p>
+
+<span class="loyalty-note">
+SECOND EXPRESSION OF CODE 005
+</span>
 
 <span class="urban-arrow">
 →
@@ -252,19 +829,23 @@ Nunca traiciones la confianza.
 </a>
 
 
+
+<!-- CODE 006 -->
 
 <a href="urban-006.html" class="urban-code">
 
 <span class="urban-number">
-006
+CODE 006
 </span>
 
-<h2>
+<h3>
 BREAK THE PATTERN
-</h2>
+</h3>
 
 <p>
 Rompe el patrón.
+Cuestiona lo establecido.
+Encuentra tu propia manera de hacer las cosas.
 </p>
 
 <span class="urban-arrow">
@@ -275,18 +856,22 @@ Rompe el patrón.
 
 
 
+<!-- CODE 007 -->
+
 <a href="urban-007.html" class="urban-code">
 
 <span class="urban-number">
-007
+CODE 007
 </span>
 
-<h2>
+<h3>
 PUSH THE LIMIT
-</h2>
+</h3>
 
 <p>
 Supera el límite.
+El límite que existe muchas veces
+es el que tú mismo has aceptado.
 </p>
 
 <span class="urban-arrow">
@@ -303,32 +888,46 @@ Supera el límite.
 </section>
 
 
+
+<!-- ======================================================
+     CLOSING
+     ====================================================== -->
 
 <section class="urban-closing">
 
 <div class="container">
 
+
 <div class="urban-closing-line"></div>
+
 
 <p>
 
-THE ORIGIN tells you where you come from.
+THE ORIGIN tells you
+<strong>where you come from.</strong>
 
-<br>
+<br><br>
 
-THE URBAN is about where you're going.
+THE URBAN asks you
+<strong>where you're going.</strong>
 
 </p>
 
+
 <span>
-THE CODE
+WORKSHOP — THE CODE
 </span>
+
 
 </div>
 
 </section>
 
 
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
 
 <footer>
 
