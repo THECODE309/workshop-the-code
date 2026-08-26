@@ -3,809 +3,19 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>WORKSHOP — THE CODE | CODE 002</title>
 
-    <title>WORKSHOP — THE CODE | CODE 002</title>
+<meta name="description" content="WORKSHOP — THE CODE. CODE 002 — SACRIFICE. Built by Work. Defined by Values.">
 
-    <meta
-        name="description"
-        content="WORKSHOP — THE CODE. CODE 002 — SACRIFICE."
-    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <style>
-
-        :root {
-
-            --black: #0c0c0c;
-            --black-soft: #141414;
-            --white: #f3f1ec;
-            --muted: #a19e98;
-            --brown: #8a5738;
-            --line: rgba(243,241,236,.18);
-
-        }
-
-
-        * {
-
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-        }
-
-
-        html {
-
-            scroll-behavior: smooth;
-
-        }
-
-
-        body {
-
-            min-height: 100vh;
-
-            background: var(--black);
-
-            color: var(--white);
-
-            font-family: 'Inter', sans-serif;
-
-            overflow-x: hidden;
-
-        }
-
-
-        a {
-
-            color: inherit;
-
-            text-decoration: none;
-
-        }
-
-
-        /* =====================================================
-           HEADER
-           ===================================================== */
-
-        header {
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-
-            padding: 30px 4vw;
-
-            z-index: 20;
-
-        }
-
-
-        .brand {
-
-            display: inline-flex;
-
-            flex-direction: column;
-
-        }
-
-
-        .brand-main {
-
-            font-size: 1.25rem;
-
-            font-weight: 800;
-
-            letter-spacing: .25em;
-
-            line-height: 1;
-
-        }
-
-
-        .brand-sub {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            margin-top: 8px;
-
-        }
-
-
-        .brand-sub span {
-
-            font-size: .60rem;
-
-            letter-spacing: .30em;
-
-        }
-
-
-        .brand-line {
-
-            width: 38px;
-
-            height: 1px;
-
-            background: var(--brown);
-
-        }
-
-
-        /* =====================================================
-           HERO
-           ===================================================== */
-
-        .hero {
-
-            min-height: 100vh;
-
-            display: grid;
-
-            grid-template-columns: 44% 56%;
-
-            align-items: center;
-
-            padding: 120px 5vw 70px;
-
-            gap: 30px;
-
-        }
-
-
-        .hero-text {
-
-            max-width: 600px;
-
-        }
-
-
-        .eyebrow {
-
-            color: var(--brown);
-
-            font-size: .62rem;
-
-            letter-spacing: .42em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-
-        }
-
-
-        .code-number {
-
-            font-size: clamp(5rem, 10vw, 10rem);
-
-            line-height: .82;
-
-            font-weight: 900;
-
-            letter-spacing: -.065em;
-
-        }
-
-
-        .divider {
-
-            width: 95px;
-
-            height: 1px;
-
-            background: var(--brown);
-
-            margin: 28px 0;
-
-        }
-
-
-        .hero-title {
-
-            font-size: clamp(3rem, 5vw, 6rem);
-
-            line-height: .85;
-
-            font-weight: 900;
-
-            letter-spacing: -.055em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .hero-copy {
-
-            max-width: 500px;
-
-            margin-top: 28px;
-
-            color: var(--muted);
-
-            font-size: .95rem;
-
-            line-height: 1.8;
-
-            font-weight: 300;
-
-        }
-
-
-        .hero-copy strong {
-
-            color: var(--white);
-
-            font-weight: 400;
-
-        }
-
-
-        /* =====================================================
-           PRODUCT AREA
-           ===================================================== */
-
-        .product-area {
-
-            min-height: 650px;
-
-            position: relative;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-        }
-
-
-        .product-background {
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-
-                radial-gradient(
-
-                    circle at 50% 48%,
-
-                    rgba(138,87,56,.18),
-
-                    transparent 40%
-
-                ),
-
-                linear-gradient(
-
-                    135deg,
-
-                    #171717,
-
-                    #0b0b0b
-
-                );
-
-            border-left: 1px solid var(--line);
-
-        }
-
-
-        /* =====================================================
-           CSS T-SHIRT MOCKUP
-           ===================================================== */
-
-        .shirt {
-
-            position: relative;
-
-            width: min(470px, 78%);
-
-            aspect-ratio: .82;
-
-            background:
-
-                linear-gradient(
-
-                    135deg,
-
-                    #e4e0d8,
-
-                    #cac5bc
-
-                );
-
-            clip-path: polygon(
-
-                29% 7%,
-                38% 0,
-                62% 0,
-                71% 7%,
-                91% 20%,
-                100% 28%,
-                90% 38%,
-                77% 31%,
-                77% 100%,
-                23% 100%,
-                23% 31%,
-                10% 38%,
-                0 28%,
-                9% 20%
-
-            );
-
-            box-shadow:
-
-                0 30px 80px rgba(0,0,0,.55);
-
-        }
-
-
-        .shirt::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 4%;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            width: 26%;
-
-            height: 9%;
-
-            border-radius: 50%;
-
-            border: 9px solid #b9b4aa;
-
-            background: transparent;
-
-        }
-
-
-        .shirt-print {
-
-            position: absolute;
-
-            inset: 18% 12% auto;
-
-            text-align: center;
-
-            color: #5e3e28;
-
-        }
-
-
-        .shirt-brand {
-
-            font-size: 1.0rem;
-
-            font-weight: 700;
-
-            letter-spacing: .35em;
-
-        }
-
-
-        .shirt-code {
-
-            margin-top: 18px;
-
-            font-size: .7rem;
-
-            letter-spacing: .28em;
-
-        }
-
-
-        .shirt-main {
-
-            margin-top: 28px;
-
-            font-size: clamp(2rem, 4vw, 4rem);
-
-            font-weight: 900;
-
-            line-height: .88;
-
-            letter-spacing: -.055em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .shirt-quote {
-
-            margin-top: 30px;
-
-            font-size: .62rem;
-
-            line-height: 1.8;
-
-            letter-spacing: .14em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .shirt-footer {
-
-            margin-top: 35px;
-
-            font-size: .48rem;
-
-            letter-spacing: .30em;
-
-        }
-
-
-        /* =====================================================
-           INFO
-           ===================================================== */
-
-        .info {
-
-            border-top: 1px solid var(--line);
-
-            display: grid;
-
-            grid-template-columns: 1.3fr 1fr;
-
-        }
-
-
-        .story {
-
-            padding: 90px 6vw;
-
-            border-right: 1px solid var(--line);
-
-        }
-
-
-        .story-label {
-
-            color: var(--brown);
-
-            font-size: .60rem;
-
-            letter-spacing: .38em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .story h2 {
-
-            font-size: clamp(2.5rem, 5vw, 5rem);
-
-            line-height: .88;
-
-            font-weight: 900;
-
-            letter-spacing: -.055em;
-
-            text-transform: uppercase;
-
-            max-width: 700px;
-
-        }
-
-
-        .story p {
-
-            max-width: 620px;
-
-            margin-top: 30px;
-
-            color: var(--muted);
-
-            font-size: .92rem;
-
-            line-height: 1.9;
-
-        }
-
-
-        .details {
-
-            padding: 90px 5vw;
-
-        }
-
-
-        .details-label {
-
-            color: var(--brown);
-
-            font-size: .60rem;
-
-            letter-spacing: .38em;
-
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
-
-        }
-
-
-        .details-title {
-
-            font-size: 2rem;
-
-            font-weight: 700;
-
-            letter-spacing: .04em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        .details-line {
-
-            width: 55px;
-
-            height: 1px;
-
-            background: var(--brown);
-
-            margin: 25px 0;
-
-        }
-
-
-        .details p {
-
-            color: var(--muted);
-
-            font-size: .85rem;
-
-            line-height: 1.8;
-
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-           ===================================================== */
-
-        .navigation {
-
-            border-top: 1px solid var(--line);
-
-            padding: 30px 5vw;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-        }
-
-
-        .nav-link {
-
-            color: var(--muted);
-
-            font-size: .58rem;
-
-            letter-spacing: .26em;
-
-            text-transform: uppercase;
-
-            transition: color .3s ease;
-
-        }
-
-
-        .nav-link:hover {
-
-            color: var(--white);
-
-        }
-
-
-        .nav-center {
-
-            color: #67645f;
-
-            font-size: .52rem;
-
-            letter-spacing: .25em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        footer {
-
-            padding: 25px 20px 30px;
-
-            text-align: center;
-
-            color: #66635e;
-
-            font-size: .50rem;
-
-            letter-spacing: .28em;
-
-            text-transform: uppercase;
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-           ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .hero {
-
-                grid-template-columns: 1fr;
-
-                padding-top: 130px;
-
-            }
-
-
-            .product-area {
-
-                min-height: 560px;
-
-            }
-
-
-            .product-background {
-
-                border-left: none;
-
-                border-top: 1px solid var(--line);
-
-            }
-
-
-            .info {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .story {
-
-                border-right: none;
-
-                border-bottom: 1px solid var(--line);
-
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            header {
-
-                padding: 25px 22px;
-
-            }
-
-
-            .hero {
-
-                padding:
-
-                    115px 25px 55px;
-
-            }
-
-
-            .code-number {
-
-                font-size: 6rem;
-
-            }
-
-
-            .hero-title {
-
-                font-size: 3.5rem;
-
-            }
-
-
-            .product-area {
-
-                min-height: 480px;
-
-            }
-
-
-            .shirt {
-
-                width: 75%;
-
-            }
-
-
-            .shirt-main {
-
-                font-size: 2.2rem;
-
-            }
-
-
-            .story,
-
-            .details {
-
-                padding:
-
-                    65px 25px;
-
-            }
-
-
-            .navigation {
-
-                flex-direction: column;
-
-                gap: 20px;
-
-                text-align: center;
-
-            }
-
-        }
-
-    </style>
+<link rel="stylesheet" href="css/code.css">
 
 </head>
 
@@ -813,259 +23,357 @@
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+<header class="navbar">
 
-    <header>
+<div class="container nav">
 
-        <a
-            href="index.html"
-            class="brand"
-        >
+<a href="index.html" class="logo">
 
-            <div class="brand-main">
-                WORKSHOP
-            </div>
+<div class="logo-main">
+    WORKSHOP
+</div>
 
-            <div class="brand-sub">
+<div class="logo-sub">
 
-                <span class="brand-line"></span>
+    <span class="line"></span>
 
-                <span>THE CODE</span>
+    <span class="text">THE CODE</span>
 
-                <span class="brand-line"></span>
+    <span class="line"></span>
 
-            </div>
+</div>
 
-        </a>
+</a>
 
-    </header>
 
+<nav>
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+<a href="origin.html">THE ORIGIN</a>
 
-    <main>
+<a href="manifesto.html">MANIFESTO</a>
 
-        <section class="hero">
+<a href="collection.html">COLLECTION</a>
 
+</nav>
 
-            <!-- LEFT -->
 
-            <div class="hero-text">
+<div class="language">
 
-                <div class="eyebrow">
-                    THE CODE
-                </div>
+<a href="#">EN</a>
 
+<span>/</span>
 
-                <div class="code-number">
-                    002
-                </div>
+<a href="#">ES</a>
 
+</div>
 
-                <div class="divider"></div>
+</div>
 
+</header>
 
-                <h1 class="hero-title">
-                    SACRIFICE
-                </h1>
 
 
-                <p class="hero-copy">
+<section class="hero">
 
-                    Success never comes without sacrifice.
+<div class="container hero-grid">
 
-                    <br><br>
 
-                    <strong>
-                        Every result has a price.
-                    </strong>
+<div class="hero-left">
 
-                    Every achievement is built through
-                    discipline, patience and the willingness
-                    to keep going when nobody is watching.
+<div class="code-small">
 
-                </p>
+<span>CODE</span>
 
-            </div>
+<h1>002</h1>
 
+</div>
 
 
-            <!-- RIGHT -->
+<div class="hero-line"></div>
 
-            <div class="product-area">
 
-                <div class="product-background"></div>
+<h2>
 
+SUCCESS NEVER COMES<br>
+WITHOUT SACRIFICE.
 
-                <div class="shirt">
+</h2>
 
-                    <div class="shirt-print">
 
-                        <div class="shirt-brand">
-                            WORKSHOP
-                        </div>
+<p>
 
+Every result has a price.
 
-                        <div class="shirt-code">
-                            THE CODE // 002
-                        </div>
+Every achievement is built through discipline,
+patience and the willingness to keep going
+when nobody is watching.
 
+CODE 002 represents the understanding that
+nothing meaningful is achieved without effort.
 
-                        <div class="shirt-main">
+</p>
 
-                            THERE IS NO SUCCESS
-                            <br><br>
-                            WITHOUT SACRIFICE.
 
-                        </div>
+<a href="#story" class="button">
 
+DISCOVER THE STORY
 
-                        <div class="shirt-quote">
+</a>
 
-                            WORK IS THE PRICE.<br>
-                            DISCIPLINE IS THE PATH.
+</div>
 
-                        </div>
 
 
-                        <div class="shirt-footer">
+<div class="hero-right">
 
-                            W — THE CODE
+<img src="assets/code-002.jpg" alt="WORKSHOP THE CODE 002 — SACRIFICE">
 
-                        </div>
+</div>
 
-                    </div>
 
-                </div>
+</div>
 
-            </div>
 
+<div class="hero-footer">
 
-        </section>
+<span>002 / 010</span>
 
+</div>
 
+</section>
 
-        <!-- =================================================
-             STORY / DETAILS
-             ================================================= -->
 
-        <section class="info">
 
+<section id="story" class="story">
 
-            <div class="story">
+<div class="container">
 
-                <div class="story-label">
-                    CODE 002
-                </div>
 
+<h3>
 
-                <h2>
-                    SUCCESS<br>
-                    HAS A PRICE.
-                </h2>
+THE STORY
 
+</h3>
 
-                <p>
 
-                    The second Code represents sacrifice.
+<p>
 
-                    <br><br>
+Success is never simply the result.
 
-                    Nothing meaningful comes without effort.
-                    Nothing lasting is built without giving
-                    something in return.
+Behind every achievement there are hours that nobody sees,
+decisions that nobody applauds and moments when giving up
+would have been easier.
 
-                    <br><br>
+Sacrifice is part of the journey.
 
-                    SACRIFICE is the decision to continue
-                    when the easy option is to stop.
+It means understanding that what we want tomorrow
+often requires something from us today.
 
-                </p>
+CODE 002 is about discipline.
 
-            </div>
+About patience.
 
+About continuing when nobody is watching.
 
+Because every result has a price.
 
-            <div class="details">
+And every achievement is built by the willingness
+to keep going.
 
-                <div class="details-label">
-                    THE VALUE
-                </div>
+</p>
 
+</div>
 
-                <div class="details-title">
-                    SACRIFICE
-                </div>
+</section>
 
 
-                <div class="details-line"></div>
 
+<section class="product">
 
-                <p>
+<div class="container product-grid">
 
-                    The willingness to work,
-                    to wait and to give more
-                    than what is immediately returned.
 
-                    <br><br>
+<div class="product-info">
 
-                    THE CODE // 002
+<span class="section-title">
 
-                </p>
+CODE 002
 
-            </div>
+</span>
 
 
-        </section>
+<h3>
 
+SACRIFICE
 
-    </main>
+</h3>
 
 
-    <!-- =====================================================
-         NAVIGATION
-         ===================================================== -->
+<p>
 
-    <div class="navigation">
+The second expression of THE CODE.
 
+A heavyweight premium cotton T-shirt
+created around one simple principle:
 
-        <a
-            href="collection.html"
-            class="nav-link"
-        >
-            ← ALL CODES
-        </a>
+success never comes without sacrifice.
 
+Designed in Spain.
 
-        <div class="nav-center">
-            002 / 010
-        </div>
+Produced in limited quantities.
 
+Created to become part of your story.
 
-        <a
-            href="code003.html"
-            class="nav-link"
-        >
-            NEXT CODE →
-        </a>
+</p>
 
 
-    </div>
+<div class="price">
 
+39 €
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
+</div>
 
-    <footer>
 
-        BUILT BY WORK. DEFINED BY VALUES.
+<a href="#" class="button">
 
-    </footer>
+BUY NOW
+
+</a>
+
+</div>
+
+
+
+<div class="product-detail">
+
+<img src="assets/code-002.jpg" alt="CODE 002 — SACRIFICE">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="details">
+
+<div class="container">
+
+<div class="details-grid">
+
+
+<div>
+
+<h4>
+
+Material
+
+</h4>
+
+<p>
+
+100% Premium Cotton
+
+240 GSM
+
+Garment Washed
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h4>
+
+Fit
+
+</h4>
+
+<p>
+
+Relaxed Oversized
+
+Dropped Shoulders
+
+Premium Finish
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h4>
+
+Edition
+
+</h4>
+
+<p>
+
+002 / 010
+
+THE CODE COLLECTION
+
+Limited Release
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="container footer-content">
+
+
+<div>
+
+WORKSHOP
+
+<span>
+
+THE CODE
+
+</span>
+
+</div>
+
+
+<div>
+
+BUILT BY WORK.
+
+DEFINED BY VALUES.
+
+</div>
+
+
+<div>
+
+© 2026 WORKSHOP
+
+</div>
+
+
+</div>
+
+</footer>
 
 
 </body>
