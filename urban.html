@@ -4,21 +4,25 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>WORKSHOP — THE CODE | THE URBAN</title>
 
 <meta name="description"
-content="THE URBAN — This is your chapter. You write the code.">
+content="THE URBAN — Your chapter. Your choices. Your code.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
-
-<link rel="stylesheet" href="css/code.css">
 
 </head>
 
@@ -26,89 +30,14 @@ rel="stylesheet">
 <body>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<header class="navbar">
-
-<div class="container nav">
+<main class="urban-cover">
 
 
-<a href="index.html" class="logo">
+<!-- ==================================================
+     IMAGEN PRINCIPAL
+================================================== -->
 
-<div class="logo-main">
-WORKSHOP
-</div>
-
-
-<div class="logo-sub">
-
-<span class="line"></span>
-
-<span class="text">
-THE CODE
-</span>
-
-<span class="line"></span>
-
-</div>
-
-</a>
-
-
-
-<nav>
-
-<a href="origin.html">
-THE ORIGIN
-</a>
-
-<a href="urban.html" class="active">
-THE URBAN
-</a>
-
-<a href="manifesto.html">
-MANIFESTO
-</a>
-
-<a href="collection.html">
-COLLECTION
-</a>
-
-</nav>
-
-
-
-<div class="language">
-
-<a href="#">
-EN
-</a>
-
-<span>/</span>
-
-<a href="#">
-ES
-</a>
-
-</div>
-
-
-</div>
-
-</header>
-
-
-
-<!-- =====================================================
-     THE URBAN — ENTRANCE
-===================================================== -->
-
-<section class="urban-entry">
-
-
-<div class="urban-entry-image">
+<div class="urban-image">
 
 <img
 src="assets/urban-intro.png"
@@ -117,35 +46,59 @@ alt="THE URBAN — WORKSHOP THE CODE">
 </div>
 
 
-<div class="urban-entry-content">
 
+<!-- ==================================================
+     DEGRADADO PARA INTEGRAR EL TEXTO
+================================================== -->
+
+<div class="urban-overlay"></div>
+
+
+
+<!-- ==================================================
+     MARCA
+================================================== -->
 
 <div class="urban-brand">
 
-<span class="urban-brand-line"></span>
+<span class="brand-line"></span>
 
-<span>THE CODE</span>
+<span>WORKSHOP — THE CODE</span>
 
-<span class="urban-brand-line"></span>
+<span class="brand-line"></span>
 
 </div>
 
 
 
+<!-- ==================================================
+     TEXTO PRINCIPAL
+================================================== -->
+
+<div class="urban-content">
+
+
+<div class="urban-kicker">
+CHAPTER II
+</div>
+
+
 <h1>
-
 THE<br>
-URBAN
-
+<span>URBAN</span>
 </h1>
 
 
-
-<div class="urban-title-line"></div>
-
+<div class="urban-rule"></div>
 
 
-<p class="urban-lead">
+<h2>
+THIS IS YOUR<br>
+CHAPTER.
+</h2>
+
+
+<p class="urban-intro">
 
 The years when everything
 is still ahead.
@@ -153,8 +106,7 @@ is still ahead.
 </p>
 
 
-
-<p>
+<p class="urban-text">
 
 The mistakes.<br>
 The detours.<br>
@@ -165,15 +117,13 @@ to define who you become.
 </p>
 
 
+<p class="urban-statement">
 
-<p class="urban-highlight">
-
-This is your chapter.<br>
-
-<span>You write the code.</span>
+<strong>
+YOU WRITE THE CODE.
+</strong>
 
 </p>
-
 
 
 <a
@@ -187,130 +137,106 @@ ENTER THE URBAN
 </a>
 
 
-
-<div class="urban-footer-text">
-
-BUILT BY WORK. DEFINED BY VALUES.
-
 </div>
 
 
-</div>
 
-</section>
+<!-- ==================================================
+     PIE
+================================================== -->
 
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container footer-content">
-
-
-<div>
-
-WORKSHOP
+<div class="urban-footer">
 
 <span>
-THE CODE
+THE CODE / CHAPTER II
+</span>
+
+<span>
+BUILT BY WORK. DEFINED BY VALUES.
 </span>
 
 </div>
 
 
-<div>
-
-BUILT BY WORK.
-
-DEFINED BY VALUES.
-
-</div>
-
-
-<div>
-
-© 2026 WORKSHOP
-
-</div>
-
-
-</div>
-
-</footer>
+</main>
 
 
 
 <style>
 
+
 /* =====================================================
-   THE URBAN ENTRY
-   ===================================================== */
+   RESET
+===================================================== */
 
+* {
 
-:root {
-
---urban-black: #151412;
---urban-brown: #8A623E;
---urban-gold: #A27A4E;
---urban-cream: #E8E1D5;
+box-sizing: border-box;
 
 }
 
 
-/* PAGE */
-
+html,
 body {
 
 margin: 0;
 
-background: var(--urban-black);
+padding: 0;
 
-color: var(--urban-cream);
+width: 100%;
+height: 100%;
 
 }
 
 
-/* =====================================================
-   MAIN ENTRY
-===================================================== */
+body {
 
-.urban-entry {
+font-family: 'Inter', sans-serif;
 
-min-height: calc(100vh - 80px);
-
-display: grid;
-
-grid-template-columns: 56% 44%;
-
-background: var(--urban-black);
+background: #141311;
 
 overflow: hidden;
 
 }
+
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.urban-cover {
+
+position: relative;
+
+width: 100vw;
+
+height: 100vh;
+
+overflow: hidden;
+
+background: #141311;
+
+}
+
 
 
 /* =====================================================
    IMAGE
 ===================================================== */
 
-.urban-entry-image {
+.urban-image {
 
-position: relative;
+position: absolute;
 
-height: calc(100vh - 80px);
-
-overflow: hidden;
+inset: 0;
 
 }
 
 
-.urban-entry-image img {
+.urban-image img {
 
 width: 100%;
-
 height: 100%;
 
 object-fit: cover;
@@ -322,56 +248,50 @@ display: block;
 }
 
 
-/* subtle dark transition */
 
-.urban-entry-image::after {
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.urban-overlay {
+
+position: absolute;
+
+inset: 0;
+
+background:
+
+linear-gradient(
+90deg,
+rgba(15,13,11,.88) 0%,
+rgba(15,13,11,.64) 28%,
+rgba(15,13,11,.18) 58%,
+rgba(15,13,11,.05) 100%
+);
+
+}
+
+
+/* Bottom integration */
+
+.urban-overlay::after {
 
 content: "";
 
 position: absolute;
 
-top: 0;
-right: 0;
-bottom: 0;
-
-width: 22%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-var(--urban-black)
-);
-
-pointer-events: none;
-
-}
-
-
-/* =====================================================
-   TEXT PANEL
-===================================================== */
-
-.urban-entry-content {
-
-display: flex;
-
-flex-direction: column;
-
-justify-content: center;
-
-padding: 70px 8vw 70px 6vw;
+inset: 0;
 
 background:
 
 linear-gradient(
-135deg,
-#171513 0%,
-#201A16 55%,
-#151412 100%
+0deg,
+rgba(15,13,11,.55) 0%,
+transparent 28%
 );
 
 }
+
 
 
 /* =====================================================
@@ -380,128 +300,213 @@ linear-gradient(
 
 .urban-brand {
 
+position: absolute;
+
+top: 42px;
+
+left: 55px;
+
 display: flex;
 
 align-items: center;
 
 gap: 14px;
 
-font-size: 11px;
+font-size: 10px;
 
 letter-spacing: 4px;
 
-color: var(--urban-gold);
+font-weight: 500;
 
-margin-bottom: 28px;
+color: #d0b18e;
+
+z-index: 5;
 
 }
 
 
-.urban-brand-line {
+.brand-line {
 
-width: 38px;
+width: 42px;
 
 height: 1px;
 
-background: var(--urban-gold);
+background: #a2774d;
 
 }
+
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.urban-content {
+
+position: absolute;
+
+left: 8vw;
+
+top: 50%;
+
+transform: translateY(-50%);
+
+width: min(560px, 45vw);
+
+z-index: 5;
+
+color: #eee8dc;
+
+}
+
+
+
+/* =====================================================
+   KICKER
+===================================================== */
+
+.urban-kicker {
+
+font-size: 11px;
+
+letter-spacing: 5px;
+
+color: #a2774d;
+
+margin-bottom: 18px;
+
+}
+
 
 
 /* =====================================================
    TITLE
 ===================================================== */
 
-.urban-entry-content h1 {
+.urban-content h1 {
 
 margin: 0;
 
-font-size: clamp(70px, 8vw, 125px);
+font-size: clamp(80px, 9vw, 145px);
 
 line-height: .78;
 
-letter-spacing: -4px;
+letter-spacing: -6px;
 
 font-weight: 700;
 
-color: var(--urban-cream);
+color: #eee8dc;
 
 }
 
 
+.urban-content h1 span {
+
+color: #a2774d;
+
+}
+
+
+
 /* =====================================================
-   LINE
+   RULE
 ===================================================== */
 
-.urban-title-line {
+.urban-rule {
 
-width: 95px;
+width: 90px;
 
 height: 3px;
 
-background: var(--urban-brown);
+background: #a2774d;
 
-margin: 35px 0;
+margin: 38px 0 32px;
 
 }
+
 
 
 /* =====================================================
-   TEXT
+   SECONDARY TITLE
 ===================================================== */
 
-.urban-lead {
+.urban-content h2 {
 
-font-size: 21px;
+margin: 0 0 22px;
 
-line-height: 1.45;
+font-size: clamp(24px, 2.4vw, 38px);
 
-margin: 0 0 25px;
+line-height: 1;
 
-font-weight: 500;
-
-}
-
-
-.urban-entry-content p:not(.urban-lead):not(.urban-highlight) {
-
-font-size: 14px;
-
-line-height: 1.8;
-
-color: rgba(232,225,213,.72);
-
-margin-bottom: 28px;
-
-}
-
-
-/* =====================================================
-   HIGHLIGHT
-===================================================== */
-
-.urban-highlight {
-
-font-size: 19px;
-
-line-height: 1.5;
-
-margin: 0 0 35px;
-
-color: var(--urban-gold);
+letter-spacing: -1px;
 
 font-weight: 600;
 
 }
 
 
-.urban-highlight span {
 
-color: var(--urban-cream);
+/* =====================================================
+   INTRO
+===================================================== */
 
-font-weight: 400;
+.urban-intro {
+
+margin: 0 0 18px;
+
+font-size: 19px;
+
+line-height: 1.5;
+
+font-weight: 500;
+
+color: #eee8dc;
 
 }
+
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.urban-text {
+
+margin: 0;
+
+font-size: 14px;
+
+line-height: 1.75;
+
+color: rgba(238,232,220,.72);
+
+}
+
+
+
+/* =====================================================
+   STATEMENT
+===================================================== */
+
+.urban-statement {
+
+margin: 27px 0 32px;
+
+font-size: 18px;
+
+letter-spacing: 1px;
+
+color: #c19a6d;
+
+}
+
+
+.urban-statement strong {
+
+font-weight: 600;
+
+}
+
 
 
 /* =====================================================
@@ -516,111 +521,186 @@ align-items: center;
 
 justify-content: space-between;
 
-width: 230px;
+width: 235px;
 
-padding: 17px 20px;
+padding: 15px 18px;
 
-border: 1px solid var(--urban-gold);
+border: 1px solid #a2774d;
 
-color: var(--urban-cream);
+color: #eee8dc;
 
 text-decoration: none;
 
-font-size: 12px;
+font-size: 10px;
 
-letter-spacing: 2px;
+letter-spacing: 3px;
 
-transition: all .3s ease;
+transition: .3s ease;
 
 }
 
 
 .urban-button span {
 
-font-size: 22px;
+font-size: 20px;
 
-color: var(--urban-gold);
+color: #c19a6d;
 
 }
 
 
 .urban-button:hover {
 
-background: var(--urban-gold);
+background: #a2774d;
 
-color: var(--urban-black);
+color: #151311;
 
 }
 
 
 .urban-button:hover span {
 
-color: var(--urban-black);
+color: #151311;
 
 }
+
 
 
 /* =====================================================
-   FOOTER TEXT
+   FOOTER
 ===================================================== */
 
-.urban-footer-text {
+.urban-footer {
 
-margin-top: 55px;
+position: absolute;
 
-font-size: 10px;
+bottom: 28px;
 
-letter-spacing: 3px;
+left: 55px;
 
-color: rgba(232,225,213,.45);
+right: 55px;
+
+display: flex;
+
+justify-content: space-between;
+
+z-index: 5;
+
+font-size: 9px;
+
+letter-spacing: 2.5px;
+
+color: rgba(238,232,220,.5);
 
 }
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+.urban-content {
+
+left: 7vw;
+
+width: 60vw;
+
+}
+
+}
+
 
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width: 650px) {
 
-.urban-entry {
+body {
 
-grid-template-columns: 1fr;
-
-}
-
-.urban-entry-image {
-
-height: 48vh;
+overflow: auto;
 
 }
 
-.urban-entry-image::after {
+.urban-cover {
 
-width: 100%;
+min-height: 100vh;
 
-height: 30%;
+height: auto;
 
-top: auto;
-bottom: 0;
+}
+
+.urban-image img {
+
+object-position: 62% center;
+
+}
+
+.urban-overlay {
 
 background:
+
 linear-gradient(
-transparent,
-var(--urban-black)
+90deg,
+rgba(15,13,11,.90),
+rgba(15,13,11,.55)
 );
 
 }
 
-.urban-entry-content {
+.urban-brand {
 
-padding: 55px 30px 65px;
+top: 25px;
+
+left: 25px;
 
 }
 
-.urban-entry-content h1 {
+.urban-content {
 
-font-size: 72px;
+position: relative;
+
+left: auto;
+
+top: auto;
+
+transform: none;
+
+width: auto;
+
+padding: 145px 28px 110px;
+
+}
+
+.urban-content h1 {
+
+font-size: 76px;
+
+}
+
+.urban-content h2 {
+
+font-size: 28px;
+
+}
+
+.urban-footer {
+
+left: 25px;
+
+right: 25px;
+
+bottom: 20px;
+
+}
+
+.urban-footer span:last-child {
+
+display: none;
 
 }
 
