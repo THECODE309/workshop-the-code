@@ -5,51 +5,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#21170f">
+
   <title>The Manifesto | THE CODE</title>
+
   <meta name="description" content="We don't sell clothing. We create symbols. Every Code represents a value. Every value defines a person.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --cream: #f2f0ea;
-      --bronze: #c18b52;
-      --dark: #21170f;
+      --manifesto-cream: #f2f0ea;
+      --manifesto-bronze: #c18b52;
+      --manifesto-dark: #21170f;
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
     html {
       min-height: 100%;
-      background: var(--dark);
+      background: var(--manifesto-dark);
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       min-height: 100svh;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--cream);
-      background-color: var(--dark);
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      color: var(--manifesto-cream);
+      background: var(--manifesto-dark);
     }
 
     .manifesto-page {
-      min-height: 100vh;
-      min-height: 100svh;
       position: relative;
       isolation: isolate;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
       padding: 48px 24px;
       overflow: hidden;
+      background-color: var(--manifesto-dark);
       background-image:
         linear-gradient(
           rgba(20, 14, 9, 0.60),
           rgba(20, 14, 9, 0.70)
         ),
-        url("assets/manifesto-background.png");
-      background-position: center center;
+        url("./assets/manifesto-background.png");
+      background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -59,134 +69,143 @@
       position: absolute;
       inset: 0;
       z-index: -1;
-      background:
-        radial-gradient(
-          ellipse at center,
-          rgba(22, 15, 9, 0.08) 0%,
-          rgba(22, 15, 9, 0.30) 75%,
-          rgba(0, 0, 0, 0.48) 100%
-        );
       pointer-events: none;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(22, 15, 9, 0.08) 0%,
+        rgba(22, 15, 9, 0.30) 75%,
+        rgba(0, 0, 0, 0.48) 100%
+      );
     }
 
     .manifesto-content {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 1000px;
       margin: auto;
-      text-align: center;
-      position: relative;
       padding: 28px 18px;
+      text-align: center;
       text-shadow: 0 2px 14px rgba(0, 0, 0, 0.60);
     }
 
-    .eyebrow {
-      color: var(--bronze);
+    .manifesto-eyebrow {
+      margin: 0 0 32px;
+      color: var(--manifesto-bronze);
       font-size: 10px;
-      letter-spacing: 0.48em;
-      text-transform: uppercase;
-      margin-bottom: 32px;
       font-weight: 500;
+      letter-spacing: 0.48em;
+      line-height: 1.5;
+      text-transform: uppercase;
     }
 
-    h1 {
-      font-family: Inter, Arial, Helvetica, sans-serif;
+    .manifesto-title {
+      margin: 0;
+      color: var(--manifesto-cream);
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
       font-size: clamp(48px, 9vw, 112px);
       font-weight: 900;
       line-height: 0.92;
       letter-spacing: -0.065em;
       text-transform: uppercase;
-      margin: 0;
-      color: var(--cream);
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
     }
 
-    h1 span {
+    .manifesto-title span {
       display: block;
+      margin: 0;
+      padding: 0;
     }
 
-    .divider {
+    .manifesto-divider {
       width: 54px;
       height: 1px;
-      background: var(--bronze);
       margin: 40px auto 42px;
+      background: var(--manifesto-bronze);
     }
 
     .manifesto-copy {
       max-width: 760px;
       margin: 0 auto;
+      color: var(--manifesto-cream);
       font-size: clamp(14px, 1.5vw, 17px);
-      line-height: 1.9;
       font-weight: 400;
-      color: #f2f0ea;
+      line-height: 1.9;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     }
 
     .manifesto-copy p {
       margin: 0 0 24px;
+      padding: 0;
     }
 
     .manifesto-copy strong {
+      color: #fff;
       font-weight: 700;
-      color: #ffffff;
     }
 
-    .actions {
-      margin-top: 52px;
+    .manifesto-actions {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 24px;
+      margin-top: 52px;
     }
 
-    .discover-button {
+    .manifesto-discover {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 24px;
-      min-width: 320px;
+      width: min(100%, 320px);
       min-height: 64px;
-      padding: 18px 28px;
-      border: 2px solid var(--bronze);
-      background: rgba(15, 10, 6, 0.72);
+      margin: 0;
+      padding: 18px 20px;
+      border: 2px solid var(--manifesto-bronze);
+      background: rgba(15, 10, 6, 0.82);
       color: #e5ad6c;
-      text-decoration: none;
-      text-transform: uppercase;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.20em;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
       text-shadow: none;
-      transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
-    .discover-button .arrow {
+    .manifesto-discover .manifesto-arrow {
+      flex: 0 0 auto;
       font-size: 23px;
       line-height: 1;
       letter-spacing: 0;
     }
 
-    .discover-button:hover,
-    .discover-button:focus-visible {
-      background: var(--bronze);
+    .manifesto-discover:hover,
+    .manifesto-discover:focus-visible {
+      background: var(--manifesto-bronze);
       color: #17110c;
-      border-color: #e2b17b;
       outline: none;
     }
 
-    .back-link {
+    .manifesto-back {
       display: inline-block;
-      color: rgba(242, 240, 234, 0.75);
-      text-decoration: none;
+      margin: 0;
+      padding: 4px 8px;
+      color: rgba(242, 240, 234, 0.85);
       font-size: 9px;
+      font-weight: 500;
       letter-spacing: 0.28em;
+      line-height: 1.6;
+      text-decoration: none;
       text-transform: uppercase;
       text-shadow: 0 2px 8px #000;
-      transition: color 0.2s ease;
     }
 
-    .back-link:hover,
-    .back-link:focus-visible {
-      color: var(--bronze);
+    .manifesto-back:hover,
+    .manifesto-back:focus-visible {
+      color: var(--manifesto-bronze);
     }
 
     @media (max-width: 600px) {
@@ -199,17 +218,17 @@
         padding: 24px 4px;
       }
 
-      .eyebrow {
+      .manifesto-eyebrow {
         margin-bottom: 26px;
         letter-spacing: 0.36em;
       }
 
-      h1 {
-        font-size: clamp(43px, 12vw, 68px);
+      .manifesto-title {
+        font-size: clamp(40px, 11.5vw, 68px);
         letter-spacing: -0.06em;
       }
 
-      .divider {
+      .manifesto-divider {
         margin: 30px auto;
       }
 
@@ -222,26 +241,24 @@
         margin-bottom: 20px;
       }
 
-      .actions {
+      .manifesto-actions {
+        gap: 18px;
         margin-top: 36px;
       }
 
-      .discover-button {
-        min-width: 0;
+      .manifesto-discover {
         width: min(100%, 330px);
         min-height: 60px;
-        gap: 14px;
-        padding: 16px 14px;
+        gap: 12px;
+        padding: 16px 12px;
         font-size: 10px;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.14em;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
+      .manifesto-discover {
+        transition: none;
       }
     }
   </style>
@@ -251,19 +268,17 @@
   <main class="manifesto-page">
     <section class="manifesto-content" aria-labelledby="manifesto-title">
 
-      <div class="eyebrow">THE CODE</div>
+      <p class="manifesto-eyebrow">THE CODE</p>
 
-      <h1 id="manifesto-title">
+      <h1 class="manifesto-title" id="manifesto-title">
         <span>THE</span>
         <span>MANIFESTO</span>
       </h1>
 
-      <div class="divider" aria-hidden="true"></div>
+      <div class="manifesto-divider" aria-hidden="true"></div>
 
       <div class="manifesto-copy">
-        <p>
-          We don't sell clothing. We create symbols.
-        </p>
+        <p>We don't sell clothing. We create symbols.</p>
 
         <p>
           Every Code represents a value.
@@ -276,17 +291,15 @@
         </p>
       </div>
 
-      <nav class="actions" aria-label="Manifesto navigation">
-
-        <a class="discover-button" href="code-destinations.html">
+      <nav class="manifesto-actions" aria-label="Manifesto navigation">
+        <a class="manifesto-discover" href="code-destinations.html">
           <span>DISCOVER YOUR CODE</span>
-          <span class="arrow" aria-hidden="true">→</span>
+          <span class="manifesto-arrow" aria-hidden="true">→</span>
         </a>
 
-        <a class="back-link" href="index.html">
+        <a class="manifesto-back" href="index.html">
           ← BACK
         </a>
-
       </nav>
 
     </section>
