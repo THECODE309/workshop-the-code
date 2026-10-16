@@ -1,715 +1,295 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>WORKSHOP — THE CODE | Manifesto</title>
-
-  <meta
-    name="description"
-    content="WORKSHOP — THE CODE. Built by Work. Defined by Values."
-  >
-
-  <!-- GOOGLE FONT -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#21170f">
+  <title>The Manifesto | THE CODE</title>
+  <meta name="description" content="We don't sell clothing. We create symbols. Every Code represents a value. Every value defines a person.">
 
   <style>
-
-    /* =====================================================
-       WORKSHOP — THE CODE
-       MANIFESTO
-       ===================================================== */
-
-
     :root {
-
-      --black: #0d0d0d;
-
-      --black-soft: #121212;
-
-      --white: #f5f3ef;
-
-      --muted: #aaa7a0;
-
-      --brown: #8a5a38;
-
-      --line: rgba(245,243,239,.18);
-
+      --cream: #f2f0ea;
+      --bronze: #c18b52;
+      --dark: #21170f;
     }
-
-
-    /* =====================================================
-       RESET
-       ===================================================== */
 
     * {
-
-      margin: 0;
-
-      padding: 0;
-
       box-sizing: border-box;
-
     }
-
 
     html {
-
-      scroll-behavior: smooth;
-
+      min-height: 100%;
+      background: var(--dark);
     }
-
 
     body {
-
+      margin: 0;
       min-height: 100vh;
-
-      background: var(--black);
-
-      color: var(--white);
-
-      font-family: 'Inter', sans-serif;
-
-      overflow-x: hidden;
-
+      min-height: 100svh;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--cream);
+      background-color: var(--dark);
     }
 
-
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-
-    }
-
-
-    /* =====================================================
-       PAGE
-       ===================================================== */
-
-    .page {
-
+    .manifesto-page {
       min-height: 100vh;
-
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
       display: flex;
-
-      flex-direction: column;
-
-    }
-
-
-    /* =====================================================
-       HEADER
-       ===================================================== */
-
-    header {
-
-      position: absolute;
-
-      top: 0;
-
-      left: 0;
-
-      width: 100%;
-
-      padding: 34px 5vw;
-
-      z-index: 10;
-
-    }
-
-
-    .brand {
-
-      display: inline-flex;
-
-      flex-direction: column;
-
-      align-items: flex-start;
-
-    }
-
-
-    .brand-main {
-
-      font-size: 1.35rem;
-
-      font-weight: 700;
-
-      letter-spacing: .20em;
-
-      line-height: 1;
-
-    }
-
-
-    .brand-sub {
-
-      display: flex;
-
       align-items: center;
-
-      gap: 10px;
-
-      margin-top: 9px;
-
-    }
-
-
-    .brand-sub .line {
-
-      width: 38px;
-
-      height: 1px;
-
-      background: var(--brown);
-
-    }
-
-
-    .brand-sub span:last-child {
-
-      font-size: .62rem;
-
-      letter-spacing: .35em;
-
-      color: var(--brown);
-
-    }
-
-
-    /* =====================================================
-       MANIFESTO
-       ===================================================== */
-
-    main {
-
-      flex: 1;
-
-      display: flex;
-
-      align-items: center;
-
       justify-content: center;
-
-      padding: 130px 24px 80px;
-
+      padding: 48px 24px;
+      overflow: hidden;
+      background-image:
+        linear-gradient(
+          rgba(20, 14, 9, 0.60),
+          rgba(20, 14, 9, 0.70)
+        ),
+        url("assets/manifesto-background.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
+    .manifesto-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(22, 15, 9, 0.08) 0%,
+          rgba(22, 15, 9, 0.30) 75%,
+          rgba(0, 0, 0, 0.48) 100%
+        );
+      pointer-events: none;
+    }
 
-    .manifesto {
-
-      width: min(900px, 90vw);
-
+    .manifesto-content {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
-
+      position: relative;
+      padding: 28px 18px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.60);
     }
-
-
-    /* EYEBROW */
 
     .eyebrow {
-
-      font-size: .62rem;
-
-      letter-spacing: .42em;
-
-      color: var(--brown);
-
+      color: var(--bronze);
+      font-size: 10px;
+      letter-spacing: 0.48em;
       text-transform: uppercase;
-
-      margin-bottom: 28px;
-
+      margin-bottom: 32px;
+      font-weight: 500;
     }
-
-
-    /* TITLE */
 
     h1 {
-
-      font-size: clamp(4rem, 9vw, 8rem);
-
-      line-height: .88;
-
-      font-weight: 800;
-
-      letter-spacing: -.045em;
-
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-size: clamp(48px, 9vw, 112px);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.065em;
       text-transform: uppercase;
-
+      margin: 0;
+      color: var(--cream);
     }
 
-
-    /* DIVIDER */
+    h1 span {
+      display: block;
+    }
 
     .divider {
-
-      width: 55px;
-
+      width: 54px;
       height: 1px;
-
-      background: var(--brown);
-
-      margin: 45px auto 42px;
-
+      background: var(--bronze);
+      margin: 40px auto 42px;
     }
 
-
-    /* TEXT */
-
-    .manifesto-text {
-
-      max-width: 620px;
-
+    .manifesto-copy {
+      max-width: 760px;
       margin: 0 auto;
-
-      color: var(--muted);
-
-      font-size: .95rem;
-
+      font-size: clamp(14px, 1.5vw, 17px);
       line-height: 1.9;
-
-      font-weight: 300;
-
-    }
-
-
-    .manifesto-text strong {
-
-      color: var(--white);
-
       font-weight: 400;
-
+      color: #f2f0ea;
     }
 
-
-    /* =====================================================
-       CTA
-       ===================================================== */
-
-    .cta {
-
-      margin-top: 55px;
-
+    .manifesto-copy p {
+      margin: 0 0 24px;
     }
 
+    .manifesto-copy strong {
+      font-weight: 700;
+      color: #ffffff;
+    }
 
-    .discover {
-
-      display: inline-flex;
-
+    .actions {
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      gap: 24px;
+    }
 
+    .discover-button {
+      display: inline-flex;
       justify-content: center;
-
-      gap: 18px;
-
-      min-width: 245px;
-
-      padding: 18px 30px;
-
-      border: 1px solid rgba(138,90,56,.75);
-
-      color: var(--brown);
-
-      font-size: .62rem;
-
-      letter-spacing: .30em;
-
+      align-items: center;
+      gap: 24px;
+      min-width: 320px;
+      min-height: 64px;
+      padding: 18px 28px;
+      border: 2px solid var(--bronze);
+      background: rgba(15, 10, 6, 0.72);
+      color: #e5ad6c;
+      text-decoration: none;
       text-transform: uppercase;
-
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-shadow: none;
       transition:
-
-        background .35s ease,
-
-        color .35s ease,
-
-        border-color .35s ease;
-
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
     }
 
-
-    .discover span {
-
-      font-size: 1rem;
-
-      transition:
-
-        transform .3s ease;
-
+    .discover-button .arrow {
+      font-size: 23px;
+      line-height: 1;
+      letter-spacing: 0;
     }
 
-
-    .discover:hover {
-
-      background: var(--brown);
-
-      border-color: var(--brown);
-
-      color: var(--white);
-
+    .discover-button:hover,
+    .discover-button:focus-visible {
+      background: var(--bronze);
+      color: #17110c;
+      border-color: #e2b17b;
+      outline: none;
     }
 
-
-    .discover:hover span {
-
-      transform: translateX(6px);
-
-    }
-
-
-    /* =====================================================
-       BACK
-       ===================================================== */
-
-    .back {
-
-      display: block;
-
-      margin-top: 28px;
-
-      color: #6f6c67;
-
-      font-size: .55rem;
-
-      letter-spacing: .25em;
-
+    .back-link {
+      display: inline-block;
+      color: rgba(242, 240, 234, 0.75);
+      text-decoration: none;
+      font-size: 9px;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-
-      transition: color .3s ease;
-
+      text-shadow: 0 2px 8px #000;
+      transition: color 0.2s ease;
     }
 
-
-    .back:hover {
-
-      color: var(--white);
-
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: var(--bronze);
     }
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
-
-    footer {
-
-      padding: 30px 5vw 25px;
-
-      text-align: center;
-
-      color: #68655f;
-
-      font-size: .52rem;
-
-      letter-spacing: .28em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /* =====================================================
-       MOBILE
-       ===================================================== */
-
-    @media (max-width: 800px) {
-
-
-      header {
-
-        padding: 26px 7vw;
-
+    @media (max-width: 600px) {
+      .manifesto-page {
+        padding: 30px 16px;
+        background-position: center center;
       }
 
-
-      .brand-main {
-
-        font-size: 1.05rem;
-
+      .manifesto-content {
+        padding: 24px 4px;
       }
 
-
-      main {
-
-        padding:
-
-          120px 24px 60px;
-
+      .eyebrow {
+        margin-bottom: 26px;
+        letter-spacing: 0.36em;
       }
-
 
       h1 {
-
-        font-size:
-
-          clamp(3.5rem, 16vw, 6rem);
-
+        font-size: clamp(43px, 12vw, 68px);
+        letter-spacing: -0.06em;
       }
-
-
-      .manifesto-text {
-
-        font-size: .82rem;
-
-        line-height: 1.8;
-
-      }
-
-
-      .discover {
-
-        width: 100%;
-
-        max-width: 300px;
-
-      }
-
-
-    }
-
-
-    /* =====================================================
-       SMALL MOBILE
-       ===================================================== */
-
-    @media (max-width: 420px) {
-
-
-      main {
-
-        padding-top: 115px;
-
-      }
-
-
-      h1 {
-
-        font-size: 3.5rem;
-
-      }
-
 
       .divider {
-
-        margin-top: 35px;
-
-        margin-bottom: 32px;
-
+        margin: 30px auto;
       }
 
+      .manifesto-copy {
+        font-size: 14px;
+        line-height: 1.8;
+      }
 
+      .manifesto-copy p {
+        margin-bottom: 20px;
+      }
+
+      .actions {
+        margin-top: 36px;
+      }
+
+      .discover-button {
+        min-width: 0;
+        width: min(100%, 330px);
+        min-height: 60px;
+        gap: 14px;
+        padding: 16px 14px;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+      }
     }
 
-
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
   </style>
-
 </head>
 
-
 <body>
+  <main class="manifesto-page">
+    <section class="manifesto-content" aria-labelledby="manifesto-title">
 
+      <div class="eyebrow">THE CODE</div>
 
-  <div class="page">
+      <h1 id="manifesto-title">
+        <span>THE</span>
+        <span>MANIFESTO</span>
+      </h1>
 
+      <div class="divider" aria-hidden="true"></div>
 
-    <!-- =================================================
-         HEADER
-         ================================================= -->
+      <div class="manifesto-copy">
+        <p>
+          We don't sell clothing. We create symbols.
+        </p>
 
-    <header>
+        <p>
+          Every Code represents a value.
+          Every value defines a person.
+        </p>
 
+        <p>
+          The garment is only the beginning.
+          <strong>The Code lives in the one who wears it.</strong>
+        </p>
+      </div>
 
-      <a
-        href="index.html"
-        class="brand"
-        aria-label="WORKSHOP THE CODE Home"
-      >
+      <nav class="actions" aria-label="Manifesto navigation">
 
+        <a class="discover-button" href="code-destinations.html">
+          <span>DISCOVER YOUR CODE</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
 
-        <div class="brand-main">
+        <a class="back-link" href="index.html">
+          ← BACK
+        </a>
 
-          WORKSHOP
+      </nav>
 
-        </div>
-
-
-        <div class="brand-sub">
-
-          <span class="line"></span>
-
-          <span>
-
-            THE CODE
-
-          </span>
-
-          <span class="line"></span>
-
-        </div>
-
-
-      </a>
-
-
-    </header>
-
-
-
-    <!-- =================================================
-         MAIN
-         ================================================= -->
-
-    <main>
-
-
-      <section class="manifesto">
-
-
-        <div class="eyebrow">
-
-          THE CODE
-
-        </div>
-
-
-        <h1>
-
-          THE<br>
-
-          MANIFESTO
-
-        </h1>
-
-
-        <div class="divider"></div>
-
-
-        <div class="manifesto-text">
-
-
-          <p>
-
-            We don't sell clothing.
-
-            We create symbols.
-
-          </p>
-
-
-          <br>
-
-
-          <p>
-
-            Every Code represents a value.
-
-            Every value defines a person.
-
-          </p>
-
-
-          <br>
-
-
-          <p>
-
-            The garment is only the beginning.
-
-            <strong>
-
-              The Code lives in the one who wears it.
-
-            </strong>
-
-          </p>
-
-
-        </div>
-
-
-
-        <!-- =============================================
-             DISCOVER
-             ============================================= -->
-
-        <div class="cta">
-
-
-          <a
-            href="code-destinations.html"
-            class="discover"
-          >
-
-            DISCOVER YOUR CODE
-
-            <span>
-
-              →
-
-            </span>
-
-          </a>
-
-
-          <a
-            href="index.html"
-            class="back"
-          >
-
-            ← BACK
-
-          </a>
-
-
-        </div>
-
-
-      </section>
-
-
-    </main>
-
-
-
-    <!-- =================================================
-         FOOTER
-         ================================================= -->
-
-    <footer>
-
-      BUILT BY WORK. DEFINED BY VALUES.
-
-    </footer>
-
-
-  </div>
-
-
+    </section>
+  </main>
 </body>
-
 </html>
