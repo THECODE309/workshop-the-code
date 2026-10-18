@@ -5,62 +5,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#11100f">
-<title>THE URBAN — WORKSHOP · THE CODE</title>
+<title>THE URBAN — THE CODE</title>
 
 <style>
 :root {
-  --bg: #11100f;
-  --paper: #f2f0ea;
+  --black: #11100f;
+  --panel: #191816;
+  --cream: #f2f0ea;
   --gold: #b8955d;
-  --muted: #c4bdb3;
+  --grey: #bdb6ac;
+  --line: rgba(184,149,93,.6);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
 body {
   margin: 0;
-  color: var(--paper);
-  background: var(--bg);
+  background: var(--black);
+  color: var(--cream);
   font-family: Arial, Helvetica, sans-serif;
 }
-button, a { font: inherit; }
+a { color: inherit; }
+button { font: inherit; }
 
-/* PORTADA */
+/* CABECERA Y MANIFIESTO */
 
 .hero {
-  position: relative;
   min-height: 100vh;
   min-height: 100svh;
+  position: relative;
   display: flex;
   align-items: center;
+  isolation: isolate;
   overflow: hidden;
-  background: #11100f;
+  background: #171512;
 }
-.hero-photo {
+.hero-image {
   position: absolute;
+  z-index: -2;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  opacity: .8;
+  object-position: center 42%;
 }
 .hero::after {
   content: "";
   position: absolute;
+  z-index: -1;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(8,8,7,.94) 0%,
-    rgba(8,8,7,.82) 36%,
-    rgba(8,8,7,.35) 72%,
-    rgba(8,8,7,.2) 100%
-  );
+  background:
+    linear-gradient(90deg,
+      rgba(10,9,8,.96) 0%,
+      rgba(10,9,8,.88) 34%,
+      rgba(10,9,8,.49) 65%,
+      rgba(10,9,8,.22) 100%),
+    linear-gradient(0deg, rgba(10,9,8,.55), transparent 50%);
 }
 .hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(760px, 85%);
-  padding: 65px 0 65px 6%;
+  width: min(700px, 88%);
+  padding: 70px 0 65px;
+  margin-left: 6%;
 }
 .eyebrow {
   color: var(--gold);
@@ -68,277 +72,345 @@ button, a { font: inherit; }
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-h1 {
-  margin: 25px 0;
-  font-size: clamp(65px, 9vw, 125px);
-  font-weight: 400;
-  line-height: .88;
-  letter-spacing: -3px;
+.hero h1 {
+  margin: 28px 0 25px;
+  font-size: clamp(72px, 10vw, 145px);
+  line-height: .83;
+  font-weight: 500;
+  letter-spacing: -4px;
 }
-.lead {
-  font-size: clamp(19px, 2vw, 27px);
+.hero h1 span {
+  display: block;
+}
+.hero-lead {
+  max-width: 600px;
+  font-size: clamp(19px, 2.1vw, 27px);
   line-height: 1.55;
-  margin: 30px 0 20px;
+  margin: 30px 0 22px;
 }
-.gold-line {
-  width: 48px;
+.gold-rule {
+  width: 49px;
   height: 4px;
   background: var(--gold);
   margin: 25px 0;
 }
 .manifesto {
+  color: #e0d9cf;
   font-size: 14px;
-  line-height: 1.9;
-  color: #e6e0d7;
+  line-height: 1.85;
 }
-.manifesto p { margin: 3px 0; }
+.manifesto p { margin: 2px 0; }
 .translation {
   margin-top: 25px;
-  padding-left: 18px;
+  padding: 3px 0 3px 17px;
   border-left: 1px solid var(--gold);
 }
 .translation-label {
-  margin-bottom: 10px;
   color: var(--gold);
   font-size: 9px;
   letter-spacing: 3px;
+  margin-bottom: 10px;
 }
-.enter {
+.enter-button {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 35px;
-  min-width: 290px;
+  gap: 30px;
+  width: 290px;
+  max-width: 100%;
   margin-top: 32px;
-  padding: 20px 22px;
+  padding: 19px 20px;
+  color: var(--cream);
   border: 1px solid var(--gold);
-  color: var(--paper);
-  background: rgba(0,0,0,.3);
+  background: rgba(10,9,8,.4);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
-  cursor: pointer;
-  transition: .25s;
+  transition: background .25s, color .25s;
 }
-.enter:hover {
-  color: #111;
-  background: var(--paper);
+.enter-button:hover {
+  background: var(--cream);
+  color: var(--black);
 }
-.enter span:last-child {
+.enter-button span:last-child {
   color: var(--gold);
   font-size: 22px;
 }
 
-/* SIETE CAMISETAS */
+/* GALERÍA CON EL FORMATO EDITORIAL DE ORIGIN */
 
-.codes {
-  padding: 75px 5% 55px;
-  background: #151412;
-  border-top: 1px solid #39332b;
+.gallery {
+  padding: 68px 5% 50px;
+  border-top: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(17,16,15,.95),rgba(17,16,15,.98)),
+    url("assets/urban.jpg") center/cover;
 }
-.section-heading {
-  margin: 0 0 38px;
+.gallery-heading {
+  margin-bottom: 34px;
 }
-.section-heading h2 {
-  margin: 18px 0 12px;
-  font-size: clamp(38px, 6vw, 72px);
-  font-weight: 400;
-  letter-spacing: 1px;
+.gallery-heading h2 {
+  margin: 16px 0 12px;
+  font-size: clamp(38px, 6.5vw, 76px);
+  line-height: .95;
+  font-weight: 500;
+  letter-spacing: -1.5px;
 }
-.section-heading p {
-  color: var(--muted);
+.gallery-heading p {
+  margin: 7px 0;
+  color: var(--grey);
+  font-size: 14px;
   line-height: 1.7;
 }
-.section-heading .gold-text { color: var(--gold); }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 22px 17px;
+.gallery-heading .spanish {
+  color: var(--gold);
 }
-.card {
+.heading-rule {
+  height: 1px;
+  width: 100%;
+  background: var(--line);
+  margin-top: 25px;
+}
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px 16px;
+}
+.code-card {
   min-width: 0;
-  display: block;
-  color: var(--paper);
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
-  background: #1b1917;
-  border: 1px solid rgba(184,149,93,.55);
+  background: var(--panel);
+  border: 1px solid var(--line);
   transition: border-color .25s, transform .25s;
 }
-.card:hover {
-  border-color: var(--paper);
-  transform: translateY(-4px);
+.code-card:hover {
+  border-color: var(--cream);
+  transform: translateY(-3px);
 }
-.photo {
+.code-photo {
   position: relative;
+  width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at center, #45403a 0%, #201e1b 75%);
+  background: #292622;
 }
-.photo img {
+.code-photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform .4s;
+  transition: transform .45s;
 }
-.card:hover .photo img { transform: scale(1.03); }
-
-/* TEXTO DE LA CAMISETA */
-
-.print {
+.code-card:hover .code-photo img {
+  transform: scale(1.035);
+}
+.photo-shade {
   position: absolute;
-  top: 35%;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgba(8,8,7,.78) 0%,
+    rgba(8,8,7,.05) 50%,
+    rgba(8,8,7,.08) 100%
+  );
+}
+.print-label {
+  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  width: 79%;
-  padding: 8px 3px;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  width: 83%;
+  padding: 12px 5px;
+  text-align: center;
   color: #f2f0ea;
-  background: rgba(12,12,11,.88);
+  background: rgba(10,10,9,.76);
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
-  text-align: center;
-  text-transform: uppercase;
   font-family: Impact, "Arial Narrow", sans-serif;
-  font-size: clamp(15px, 1.7vw, 27px);
+  font-size: clamp(19px,2.2vw,34px);
   font-weight: 900;
-  line-height: 1.05;
-  overflow-wrap: anywhere;
+  line-height: 1.02;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #5e574d;
   pointer-events: none;
 }
-.print.long {
-  font-size: clamp(10px, 1.15vw, 17px);
+.print-label.long {
+  font-size: clamp(14px,1.55vw,23px);
 }
-.print small {
+.print-label small {
   display: block;
-  margin-top: 7px;
-  font-family: Arial, sans-serif;
-  font-size: 7px;
-  font-weight: 400;
+  margin-top: 9px;
+  font: 8px Arial, sans-serif;
   letter-spacing: 2px;
 }
 .card-info {
-  padding: 19px 12px 21px;
+  flex: 1;
+  padding: 20px 10px 22px;
   text-align: center;
 }
-.number {
+.code-number {
   color: var(--gold);
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 3px;
 }
-.name {
+.code-name {
   margin: 12px 0 6px;
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.4;
   font-weight: 500;
-  letter-spacing: .6px;
 }
-.name-es {
+.code-spanish {
+  min-height: 17px;
   color: var(--gold);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
 }
-.description {
-  color: var(--muted);
-  margin-top: 12px;
-  font-size: 11px;
-  line-height: 1.7;
+.code-description {
+  margin-top: 13px;
+  color: var(--grey);
+  font-size: 10px;
+  line-height: 1.75;
 }
 .discover {
   margin-top: 17px;
   font-size: 9px;
   letter-spacing: 2px;
 }
-.discover span { color: var(--gold); }
+.discover span {
+  color: var(--gold);
+  font-size: 14px;
+}
+
+/* CENTRAR LAS TRES ÚLTIMAS TARJETAS */
+
+.code-card:nth-child(5) { grid-column: 1 / 2; }
+.code-card:nth-child(6) { grid-column: 2 / 3; }
+.code-card:nth-child(7) { grid-column: 3 / 4; }
 
 .closing {
-  margin-top: 60px;
-  padding: 28px 0;
-  border-top: 1px solid rgba(184,149,93,.55);
+  margin-top: 48px;
+  padding: 25px 0 5px;
+  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
   flex-wrap: wrap;
-  gap: 20px;
 }
 .closing strong {
+  display: block;
   color: var(--gold);
-  font-size: clamp(18px, 2.5vw, 29px);
+  font-size: clamp(16px,2vw,24px);
   font-weight: 500;
   letter-spacing: 1px;
 }
 .closing p {
-  color: var(--muted);
-  font-size: 10px;
+  color: var(--grey);
+  font-size: 9px;
   letter-spacing: 2px;
+  line-height: 1.8;
 }
 footer {
-  padding: 25px 5%;
+  padding: 22px 5%;
   border-top: 1px solid #39332b;
-  color: #958b7f;
+  color: #a49a8d;
+  text-align: center;
   font-size: 9px;
   letter-spacing: 3px;
 }
 
-/* ADAPTACIÓN MÓVIL */
+/* TABLET */
 
-@media (max-width: 1000px) {
-  .grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media (max-width: 950px) {
+  .code-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .code-card:nth-child(n) { grid-column: auto; }
+  .code-card:nth-child(7) { grid-column: 1 / -1; }
+  .code-card:nth-child(7) .code-photo {
+    aspect-ratio: 5 / 3;
+  }
+  .code-card:nth-child(7) .code-photo img {
+    object-position: center 35%;
+  }
 }
-@media (max-width: 650px) {
-  .hero { align-items: flex-end; }
-  .hero-photo { object-position: 60% center; }
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+  .hero {
+    align-items: flex-end;
+    min-height: 100svh;
+  }
+  .hero-image { object-position: 61% center; }
   .hero::after {
     background: linear-gradient(
       0deg,
-      rgba(8,8,7,.98) 0%,
-      rgba(8,8,7,.9) 50%,
-      rgba(8,8,7,.3) 100%
+      rgba(9,8,7,.98) 0%,
+      rgba(9,8,7,.91) 52%,
+      rgba(9,8,7,.35) 100%
     );
   }
   .hero-content {
-    width: 100%;
-    padding: 85px 7% 45px;
+    width: 88%;
+    margin: 0 auto;
+    padding: 85px 0 38px;
   }
-  h1 { font-size: clamp(58px, 15vw, 90px); }
-  .lead { font-size: 19px; }
-  .enter { width: 100%; min-width: 0; }
-  .codes { padding: 48px 5% 35px; }
-  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px 10px; }
-  .card-info { padding: 15px 5px; }
-  .name { font-size: 12px; }
-  .name-es { font-size: 10px; }
-  .description { font-size: 10px; }
-  .print { width: 86%; font-size: clamp(12px, 3vw, 19px); }
-  .print.long { font-size: clamp(9px, 2.3vw, 14px); }
+  .hero h1 {
+    font-size: clamp(65px,16vw,96px);
+    letter-spacing: -2px;
+  }
+  .hero-lead { font-size: 19px; }
+  .manifesto { font-size: 12px; }
+  .gallery { padding: 48px 5% 35px; }
+  .gallery-heading h2 { font-size: 43px; }
+  .code-grid { gap: 12px 10px; }
+  .code-photo { aspect-ratio: 3 / 4; }
+  .card-info { padding: 15px 5px 17px; }
+  .code-name { font-size: 11px; }
+  .code-spanish { font-size: 9px; }
+  .code-description { font-size: 9px; }
+  .print-label {
+    width: 90%;
+    font-size: clamp(13px,3.5vw,21px);
+    padding: 8px 3px;
+  }
+  .print-label.long { font-size: clamp(10px,2.6vw,15px); }
+  .print-label small { font-size: 6px; }
+  .code-card:nth-child(7) .code-photo { aspect-ratio: 3 / 4; }
+  .closing { margin-top: 35px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PORTADA: FOTO ORIGINAL DEL GRAFITERO -->
+<!-- PANTALLA 1: MANIFIESTO URBAN -->
 
-<section class="hero" id="manifesto">
+<section class="hero" id="urban-manifesto">
   <img
-    class="hero-photo"
-    id="heroPhoto"
+    class="hero-image"
+    id="urbanHero"
     src="img/urban-intro.jpg"
-    alt="Escena urbana de THE CODE"
+    alt="THE URBAN — graffiti y cultura urbana"
   >
 
   <div class="hero-content">
     <div class="eyebrow">WORKSHOP · THE CODE</div>
 
-    <h1>THE<br>URBAN</h1>
+    <h1><span>THE</span><span>URBAN</span></h1>
 
-    <div class="lead">
+    <div class="hero-lead">
       The city. The movement. The attitude.<br>
       A new generation defining its own Code.
     </div>
 
-    <div class="gold-line"></div>
+    <div class="gold-rule"></div>
 
     <div class="manifesto">
       <p>We don't just wear clothes.</p>
@@ -357,119 +429,169 @@ footer {
       </div>
     </div>
 
-    <button class="enter" id="enterUrban" type="button">
+    <a class="enter-button" href="#urban-codes">
       <span>ENTER THE URBAN</span>
       <span>→</span>
-    </button>
+    </a>
   </div>
 </section>
 
-<!-- GALERÍA: SIETE CODES -->
+<!-- PANTALLA 2: LOS SIETE CODES -->
 
-<section class="codes" id="urban-codes">
-  <header class="section-heading">
+<section class="gallery" id="urban-codes">
+  <div class="gallery-heading">
     <div class="eyebrow">YOUR IDENTITY · YOUR VALUES</div>
     <h2>THE URBAN CODES</h2>
     <p>Seven Codes. Seven ways to express who you are.</p>
-    <p class="gold-text">Siete códigos. Siete formas de expresar quién eres.</p>
-  </header>
+    <p class="spanish">Siete códigos. Siete formas de expresar quién eres.</p>
+    <div class="heading-rule"></div>
+  </div>
 
-  <div class="grid">
+  <div class="code-grid">
 
-    <a class="card" href="urban-001.html">
-      <div class="photo">
-        <img src="img/urban-001.jpg" alt="Urban Code 001" loading="lazy">
-        <div class="print">OWN<br>THE<br>FUTURE<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-001.html">
+      <div class="code-photo">
+        <img data-code="001" src="img/urban-001.jpg"
+             alt="Camiseta Urban Code 001" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label">OWN THE<br>FUTURE
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 001</div>
-        <h3 class="name">OWN THE FUTURE</h3>
-        <div class="name-es">CONSTRUYE TU FUTURO</div>
-        <div class="description">The future is built, not awaited.<br>El futuro se construye, no se espera.</div>
+        <div class="code-number">CODE 001</div>
+        <h3 class="code-name">OWN THE FUTURE</h3>
+        <div class="code-spanish">CONSTRUYE TU FUTURO</div>
+        <div class="code-description">
+          The future is built, not awaited.<br>
+          El futuro se construye, no se espera.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-002.html">
-      <div class="photo">
-        <img src="img/urban-002.jpg" alt="Urban Code 002" loading="lazy">
-        <div class="print">EARN<br>THE<br>DAY<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-002.html">
+      <div class="code-photo">
+        <img data-code="002" src="img/urban-002.jpg"
+             alt="Camiseta Urban Code 002" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label">EARN<br>THE DAY
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 002</div>
-        <h3 class="name">EARN THE DAY</h3>
-        <div class="name-es">DISCIPLINA</div>
-        <div class="description">Make every day count.<br>Haz que cada día cuente.</div>
+        <div class="code-number">CODE 002</div>
+        <h3 class="code-name">EARN THE DAY</h3>
+        <div class="code-spanish">GÁNATE CADA DÍA</div>
+        <div class="code-description">
+          Make every day count.<br>
+          Haz que cada día cuente.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-003.html">
-      <div class="photo">
-        <img src="img/urban-003.jpg" alt="Urban Code 003" loading="lazy">
-        <div class="print">TRUST<br>THE<br>DETOUR<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-003.html">
+      <div class="code-photo">
+        <img data-code="003" src="img/urban-003.jpg"
+             alt="Camiseta Urban Code 003" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label long">TRUST THE<br>DETOUR
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 003</div>
-        <h3 class="name">TRUST THE DETOUR</h3>
-        <div class="name-es">CONFÍA EN EL CAMINO</div>
-        <div class="description">Every detour teaches you something.<br>Cada desvío te enseña algo.</div>
+        <div class="code-number">CODE 003</div>
+        <h3 class="code-name">TRUST THE DETOUR</h3>
+        <div class="code-spanish">CONFÍA EN EL DESVÍO</div>
+        <div class="code-description">
+          Every detour teaches you something.<br>
+          Cada desvío te enseña algo.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-004.html">
-      <div class="photo">
-        <img src="img/urban-004.jpg" alt="Urban Code 004" loading="lazy">
-        <div class="print">STAY<br>THE<br>COURSE<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-004.html">
+      <div class="code-photo">
+        <img data-code="004" src="img/urban-004.jpg"
+             alt="Camiseta Urban Code 004" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label long">STAY THE<br>COURSE
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 004</div>
-        <h3 class="name">STAY THE COURSE</h3>
-        <div class="name-es">MANTÉN EL RUMBO</div>
-        <div class="description">Stay focused. Keep moving.<br>Mantén el enfoque. Sigue adelante.</div>
+        <div class="code-number">CODE 004</div>
+        <h3 class="code-name">STAY THE COURSE</h3>
+        <div class="code-spanish">MANTÉN EL RUMBO</div>
+        <div class="code-description">
+          Stay focused. Keep moving.<br>
+          Mantén el enfoque. Sigue adelante.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-005.html">
-      <div class="photo">
-        <img src="img/urban-005.jpg" alt="Urban Code 005" loading="lazy">
-        <div class="print">KEEP<br>YOUR<br>WORD<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-005.html">
+      <div class="code-photo">
+        <img data-code="005" src="img/urban-005.jpg"
+             alt="Camiseta Urban Code 005" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label">KEEP YOUR<br>WORD
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 005</div>
-        <h3 class="name">KEEP YOUR WORD</h3>
-        <div class="name-es">CUMPLE TU PALABRA</div>
-        <div class="description">Your word is your signature.<br>Tu palabra es tu firma.</div>
+        <div class="code-number">CODE 005</div>
+        <h3 class="code-name">KEEP YOUR WORD</h3>
+        <div class="code-spanish">CUMPLE TU PALABRA</div>
+        <div class="code-description">
+          Your word is your signature.<br>
+          Tu palabra es tu firma.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-006.html">
-      <div class="photo">
-        <img src="img/urban-006.jpg" alt="Urban Code 006" loading="lazy">
-        <div class="print">BREAK<br>THE<br>PATTERN<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-006.html">
+      <div class="code-photo">
+        <img data-code="006" src="img/urban-006.jpg"
+             alt="Camiseta Urban Code 006" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label long">BREAK THE<br>PATTERN
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 006</div>
-        <h3 class="name">BREAK THE PATTERN</h3>
-        <div class="name-es">ROMPE EL PATRÓN</div>
-        <div class="description">Question what holds you back.<br>Cuestiona lo que te limita.</div>
+        <div class="code-number">CODE 006</div>
+        <h3 class="code-name">BREAK THE PATTERN</h3>
+        <div class="code-spanish">ROMPE EL PATRÓN</div>
+        <div class="code-description">
+          Question what holds you back.<br>
+          Cuestiona lo que te limita.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
 
-    <a class="card" href="urban-007.html">
-      <div class="photo">
-        <img src="img/urban-007.jpg" alt="Urban Code 007" loading="lazy">
-        <div class="print">PUSH<br>THE<br>LIMIT<small>THE CODE | URBAN</small></div>
+    <a class="code-card" href="urban-007.html">
+      <div class="code-photo">
+        <img data-code="007" src="img/urban-007.jpg"
+             alt="Camiseta Urban Code 007" loading="lazy">
+        <div class="photo-shade"></div>
+        <div class="print-label">PUSH THE<br>LIMIT
+          <small>THE CODE · URBAN</small>
+        </div>
       </div>
       <div class="card-info">
-        <div class="number">CODE 007</div>
-        <h3 class="name">PUSH THE LIMIT</h3>
-        <div class="name-es">SUPERA TUS LÍMITES</div>
-        <div class="description">Go further than yesterday.<br>Llega más lejos que ayer.</div>
+        <div class="code-number">CODE 007</div>
+        <h3 class="code-name">PUSH THE LIMIT</h3>
+        <div class="code-spanish">SUPERA TUS LÍMITES</div>
+        <div class="code-description">
+          Go further than yesterday.<br>
+          Llega más lejos que ayer.
+        </div>
         <div class="discover">DISCOVER CODE <span>→</span></div>
       </div>
     </a>
@@ -478,85 +600,85 @@ footer {
 
   <div class="closing">
     <div>
-      <strong>THE CODE ISN'T JUST WHAT WE WEAR.</strong>
-      <p>IT'S HOW WE LIVE.</p>
+      <strong>BUILT BY WORK.</strong>
+      <p>DEFINED BY VALUES.</p>
     </div>
     <div>
       <strong>VISTE TUS VALORES.</strong>
-      <p>ELIGE TU CÓDIGO. VIVE TUS PRINCIPIOS.</p>
+      <p>ELIGE TU CÓDIGO · VIVE TUS PRINCIPIOS.</p>
     </div>
   </div>
 </section>
 
-<footer>WORKSHOP · THE CODE — THE URBAN</footer>
+<footer>WORKSHOP · THE CODE · THE URBAN</footer>
 
 <script>
-/* ENTRADA A LA GALERÍA */
-document.getElementById("enterUrban").addEventListener("click", function () {
-  document.getElementById("urban-codes").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-});
-
 /*
-  PRUEBA VARIAS RUTAS PARA RECUPERAR LA PORTADA.
-  Se utiliza la primera imagen que exista.
+  Busca las imágenes en las ubicaciones previstas.
+  Si falta una foto de Code, usa temporalmente la foto
+  de entrada para evitar que la tarjeta quede vacía.
 */
-function tryImage(element, candidates) {
-  let index = 0;
+function loadFromCandidates(img, candidates, onFinalError) {
+  let position = 0;
 
-  function next() {
-    if (index >= candidates.length) {
-      element.style.display = "none";
-      console.warn("No se encontró la imagen:", candidates);
+  function tryNext() {
+    if (position >= candidates.length) {
+      if (onFinalError) onFinalError();
       return;
     }
 
-    const candidate = candidates[index++];
+    const path = candidates[position++];
     const test = new Image();
 
     test.onload = function () {
-      element.src = candidate;
-      element.style.display = "";
+      img.src = path;
     };
 
-    test.onerror = next;
-    test.src = candidate;
+    test.onerror = tryNext;
+    test.src = path;
   }
 
-  element.onerror = function () {
-    next();
-  };
-
-  next();
+  tryNext();
 }
 
-tryImage(document.getElementById("heroPhoto"), [
+/* Imagen original del grafitero Urban */
+const hero = document.getElementById("urbanHero");
+
+loadFromCandidates(hero, [
   "img/urban-intro.jpg",
-  "img/urban-intro.png",
   "assets/urban-intro.jpg",
+  "img/urban-intro.png",
   "assets/urban-intro.png",
-  "img/urban.jpg",
-  "assets/urban.jpg"
-]);
+  "assets/urban.jpg",
+  "img/urban.jpg"
+], function () {
+  hero.style.display = "none";
+});
 
-/*
-  PRUEBA VARIAS UBICACIONES PARA CADA FOTOGRAFÍA.
-  Si tus archivos tienen otros nombres, tendrás que
-  cambiar las rutas por los nombres reales de GitHub.
-*/
-document.querySelectorAll(".card .photo img").forEach(function (img, i) {
-  const n = String(i + 1).padStart(3, "0");
+/* Fotografías de los siete Codes */
+document.querySelectorAll("img[data-code]").forEach(function (img) {
+  const code = img.dataset.code;
 
-  tryImage(img, [
-    "img/urban-" + n + ".jpg",
-    "img/urban-" + n + ".png",
-    "assets/urban-" + n + ".jpg",
-    "assets/urban-" + n + ".png",
-    "img/code-" + n + ".jpg",
-    "assets/code-" + n + ".jpg"
-  ]);
+  loadFromCandidates(img, [
+    "img/urban-" + code + ".jpg",
+    "img/urban-" + code + ".png",
+    "img/urban-code-" + code + ".jpg",
+    "img/urban-code-" + code + ".png",
+    "assets/urban-" + code + ".jpg",
+    "assets/urban-" + code + ".png",
+    "assets/urban-code-" + code + ".jpg",
+    "assets/urban-code-" + code + ".png",
+    "img/code-" + code + ".jpg"
+  ], function () {
+    loadFromCandidates(img, [
+      "img/urban-intro.jpg",
+      "assets/urban-intro.jpg",
+      "assets/urban.jpg",
+      "img/urban.jpg"
+    ], function () {
+      img.style.display = "none";
+    });
+  });
 });
 </script>
 
