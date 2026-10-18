@@ -1,714 +1,197 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE URBAN — Choose Your Code</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>WORKSHOP — THE CODE | THE URBAN</title>
-
-<meta name="description"
-content="THE URBAN — Your chapter. Your choices. Your code.">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#151412;
+  color:#F2F0EA;
+  font-family:Arial,Helvetica,sans-serif;
+}
+header{
+  padding:55px 7% 35px;
+}
+.eyebrow{
+  color:#B98B5F;
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+h1{
+  font-size:clamp(42px,7vw,82px);
+  font-weight:400;
+  letter-spacing:3px;
+  margin:20px 0 12px;
+}
+.intro{
+  color:#BDB8B0;
+  font-size:15px;
+  letter-spacing:1px;
+}
+.codes{
+  padding:25px 7% 75px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:35px 22px;
+}
+.code{
+  min-width:0;
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+.photo{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#24221F;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+.code:hover .photo img{
+  transform:scale(1.04);
+}
+.number{
+  color:#B98B5F;
+  font-size:11px;
+  letter-spacing:3px;
+  margin-top:19px;
+}
+h2{
+  font-size:19px;
+  font-weight:400;
+  letter-spacing:1.5px;
+  margin:9px 0;
+}
+.discover{
+  color:#BDB8B0;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:14px;
+}
+footer{
+  border-top:1px solid #39342D;
+  padding:28px 7%;
+  color:#8F8980;
+  font-size:10px;
+  letter-spacing:3px;
+}
+@media(max-width:750px){
+  .codes{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}
+  header{padding-top:38px}
+  h2{font-size:15px}
+}
+@media(max-width:420px){
+  .codes{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 
 <body>
 
+<header>
+  <div class="eyebrow">WORKSHOP · THE CODE</div>
+  <h1>THE URBAN</h1>
+  <p class="intro">THIS IS YOUR CHAPTER. YOU WRITE THE CODE.</p>
+  <p class="intro">Choose the Code that defines you.</p>
+</header>
 
-<main class="urban-cover">
+<main class="codes">
 
+  <a class="code" href="urban-code-001.html">
+    <div class="photo">
+      <img src="assets/urban-001.jpg"
+           alt="Code 001 — Own the Future">
+    </div>
+    <div class="number">CODE 001</div>
+    <h2>OWN THE FUTURE</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
-<!-- ==================================================
-     IMAGEN PRINCIPAL
-================================================== -->
+  <a class="code" href="urban-code-002.html">
+    <div class="photo">
+      <img src="assets/urban-002.jpg"
+           alt="Code 002 — Earn the Day">
+    </div>
+    <div class="number">CODE 002</div>
+    <h2>EARN THE DAY</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
-<div class="urban-image">
+  <a class="code" href="urban-code-003.html">
+    <div class="photo">
+      <img src="assets/urban-003.jpg"
+           alt="Code 003 — Trust the Detour">
+    </div>
+    <div class="number">CODE 003</div>
+    <h2>TRUST THE DETOUR</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
-<img
-src="assets/urban-intro.png"
-alt="THE URBAN — WORKSHOP THE CODE">
+  <a class="code" href="urban-code-004.html">
+    <div class="photo">
+      <img src="assets/urban-004.jpg"
+           alt="Code 004 — Stay the Course">
+    </div>
+    <div class="number">CODE 004</div>
+    <h2>STAY THE COURSE</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
-</div>
+  <a class="code" href="urban-code-005.html">
+    <div class="photo">
+      <img src="assets/urban-005.jpg"
+           alt="Code 005 — Keep Your Word">
+    </div>
+    <div class="number">CODE 005</div>
+    <h2>KEEP YOUR WORD</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
+  <a class="code" href="urban-code-005a.html">
+    <div class="photo">
+      <img src="assets/urban-005a.jpg"
+           alt="Code 005A — Never Betray Trust">
+    </div>
+    <div class="number">CODE 005A</div>
+    <h2>NEVER BETRAY TRUST</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
+  <a class="code" href="urban-code-006.html">
+    <div class="photo">
+      <img src="assets/urban-006.jpg"
+           alt="Code 006 — Break the Pattern">
+    </div>
+    <div class="number">CODE 006</div>
+    <h2>BREAK THE PATTERN</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
-<!-- ==================================================
-     DEGRADADO PARA INTEGRAR EL TEXTO
-================================================== -->
-
-<div class="urban-overlay"></div>
-
-
-
-<!-- ==================================================
-     MARCA
-================================================== -->
-
-<div class="urban-brand">
-
-<span class="brand-line"></span>
-
-<span>WORKSHOP — THE CODE</span>
-
-<span class="brand-line"></span>
-
-</div>
-
-
-
-<!-- ==================================================
-     TEXTO PRINCIPAL
-================================================== -->
-
-<div class="urban-content">
-
-
-<div class="urban-kicker">
-CHAPTER II
-</div>
-
-
-<h1>
-THE<br>
-<span>URBAN</span>
-</h1>
-
-
-<div class="urban-rule"></div>
-
-
-<h2>
-THIS IS YOUR<br>
-CHAPTER.
-</h2>
-
-
-<p class="urban-intro">
-
-The years when everything
-is still ahead.
-
-</p>
-
-
-<p class="urban-text">
-
-The mistakes.<br>
-The detours.<br>
-The falls.<br>
-The decisions that begin
-to define who you become.
-
-</p>
-
-
-<p class="urban-statement">
-
-<strong>
-YOU WRITE THE CODE.
-</strong>
-
-</p>
-
-
-<a
-href="urban-codes.html"
-class="urban-button">
-
-ENTER THE URBAN
-
-<span>→</span>
-
-</a>
-
-
-</div>
-
-
-
-<!-- ==================================================
-     PIE
-================================================== -->
-
-<div class="urban-footer">
-
-<span>
-THE CODE / CHAPTER II
-</span>
-
-<span>
-BUILT BY WORK. DEFINED BY VALUES.
-</span>
-
-</div>
-
+  <a class="code" href="urban-code-007.html">
+    <div class="photo">
+      <img src="assets/urban-007.jpg"
+           alt="Code 007 — Push the Limit">
+    </div>
+    <div class="number">CODE 007</div>
+    <h2>PUSH THE LIMIT</h2>
+    <div class="discover">DISCOVER THIS CODE ↗</div>
+  </a>
 
 </main>
 
-
-
-<style>
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-
-box-sizing: border-box;
-
-}
-
-
-html,
-body {
-
-margin: 0;
-
-padding: 0;
-
-width: 100%;
-height: 100%;
-
-}
-
-
-body {
-
-font-family: 'Inter', sans-serif;
-
-background: #141311;
-
-overflow: hidden;
-
-}
-
-
-
-/* =====================================================
-   COVER
-===================================================== */
-
-.urban-cover {
-
-position: relative;
-
-width: 100vw;
-
-height: 100vh;
-
-overflow: hidden;
-
-background: #141311;
-
-}
-
-
-
-/* =====================================================
-   IMAGE
-===================================================== */
-
-.urban-image {
-
-position: absolute;
-
-inset: 0;
-
-}
-
-
-.urban-image img {
-
-width: 100%;
-height: 100%;
-
-object-fit: cover;
-
-object-position: center;
-
-display: block;
-
-}
-
-
-
-/* =====================================================
-   OVERLAY
-===================================================== */
-
-.urban-overlay {
-
-position: absolute;
-
-inset: 0;
-
-background:
-
-linear-gradient(
-90deg,
-rgba(15,13,11,.88) 0%,
-rgba(15,13,11,.64) 28%,
-rgba(15,13,11,.18) 58%,
-rgba(15,13,11,.05) 100%
-);
-
-}
-
-
-/* Bottom integration */
-
-.urban-overlay::after {
-
-content: "";
-
-position: absolute;
-
-inset: 0;
-
-background:
-
-linear-gradient(
-0deg,
-rgba(15,13,11,.55) 0%,
-transparent 28%
-);
-
-}
-
-
-
-/* =====================================================
-   BRAND
-===================================================== */
-
-.urban-brand {
-
-position: absolute;
-
-top: 42px;
-
-left: 55px;
-
-display: flex;
-
-align-items: center;
-
-gap: 14px;
-
-font-size: 10px;
-
-letter-spacing: 4px;
-
-font-weight: 500;
-
-color: #d0b18e;
-
-z-index: 5;
-
-}
-
-
-.brand-line {
-
-width: 42px;
-
-height: 1px;
-
-background: #a2774d;
-
-}
-
-
-
-/* =====================================================
-   CONTENT
-===================================================== */
-
-.urban-content {
-
-position: absolute;
-
-left: 8vw;
-
-top: 50%;
-
-transform: translateY(-50%);
-
-width: min(560px, 45vw);
-
-z-index: 5;
-
-color: #eee8dc;
-
-}
-
-
-
-/* =====================================================
-   KICKER
-===================================================== */
-
-.urban-kicker {
-
-font-size: 11px;
-
-letter-spacing: 5px;
-
-color: #a2774d;
-
-margin-bottom: 18px;
-
-}
-
-
-
-/* =====================================================
-   TITLE
-===================================================== */
-
-.urban-content h1 {
-
-margin: 0;
-
-font-size: clamp(80px, 9vw, 145px);
-
-line-height: .78;
-
-letter-spacing: -6px;
-
-font-weight: 700;
-
-color: #eee8dc;
-
-}
-
-
-.urban-content h1 span {
-
-color: #a2774d;
-
-}
-
-
-
-/* =====================================================
-   RULE
-===================================================== */
-
-.urban-rule {
-
-width: 90px;
-
-height: 3px;
-
-background: #a2774d;
-
-margin: 38px 0 32px;
-
-}
-
-
-
-/* =====================================================
-   SECONDARY TITLE
-===================================================== */
-
-.urban-content h2 {
-
-margin: 0 0 22px;
-
-font-size: clamp(24px, 2.4vw, 38px);
-
-line-height: 1;
-
-letter-spacing: -1px;
-
-font-weight: 600;
-
-}
-
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-.urban-intro {
-
-margin: 0 0 18px;
-
-font-size: 19px;
-
-line-height: 1.5;
-
-font-weight: 500;
-
-color: #eee8dc;
-
-}
-
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.urban-text {
-
-margin: 0;
-
-font-size: 14px;
-
-line-height: 1.75;
-
-color: rgba(238,232,220,.72);
-
-}
-
-
-
-/* =====================================================
-   STATEMENT
-===================================================== */
-
-.urban-statement {
-
-margin: 27px 0 32px;
-
-font-size: 18px;
-
-letter-spacing: 1px;
-
-color: #c19a6d;
-
-}
-
-
-.urban-statement strong {
-
-font-weight: 600;
-
-}
-
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.urban-button {
-
-display: inline-flex;
-
-align-items: center;
-
-justify-content: space-between;
-
-width: 235px;
-
-padding: 15px 18px;
-
-border: 1px solid #a2774d;
-
-color: #eee8dc;
-
-text-decoration: none;
-
-font-size: 10px;
-
-letter-spacing: 3px;
-
-transition: .3s ease;
-
-}
-
-
-.urban-button span {
-
-font-size: 20px;
-
-color: #c19a6d;
-
-}
-
-
-.urban-button:hover {
-
-background: #a2774d;
-
-color: #151311;
-
-}
-
-
-.urban-button:hover span {
-
-color: #151311;
-
-}
-
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.urban-footer {
-
-position: absolute;
-
-bottom: 28px;
-
-left: 55px;
-
-right: 55px;
-
-display: flex;
-
-justify-content: space-between;
-
-z-index: 5;
-
-font-size: 9px;
-
-letter-spacing: 2.5px;
-
-color: rgba(238,232,220,.5);
-
-}
-
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-
-.urban-content {
-
-left: 7vw;
-
-width: 60vw;
-
-}
-
-}
-
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-body {
-
-overflow: auto;
-
-}
-
-.urban-cover {
-
-min-height: 100vh;
-
-height: auto;
-
-}
-
-.urban-image img {
-
-object-position: 62% center;
-
-}
-
-.urban-overlay {
-
-background:
-
-linear-gradient(
-90deg,
-rgba(15,13,11,.90),
-rgba(15,13,11,.55)
-);
-
-}
-
-.urban-brand {
-
-top: 25px;
-
-left: 25px;
-
-}
-
-.urban-content {
-
-position: relative;
-
-left: auto;
-
-top: auto;
-
-transform: none;
-
-width: auto;
-
-padding: 145px 28px 110px;
-
-}
-
-.urban-content h1 {
-
-font-size: 76px;
-
-}
-
-.urban-content h2 {
-
-font-size: 28px;
-
-}
-
-.urban-footer {
-
-left: 25px;
-
-right: 25px;
-
-bottom: 20px;
-
-}
-
-.urban-footer span:last-child {
-
-display: none;
-
-}
-
-}
-
-</style>
-
+<footer>WORKSHOP · THE CODE — THE URBAN</footer>
 
 </body>
-
 </html>
