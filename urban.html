@@ -3,195 +3,327 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THE URBAN — Choose Your Code</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE URBAN — WORKSHOP · THE CODE</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:#151412;
-  color:#F2F0EA;
-  font-family:Arial,Helvetica,sans-serif;
+:root {
+  --bg: #151412;
+  --paper: #F2F0EA;
+  --muted: #BDB5AA;
+  --accent: #B98B5F;
+  --line: #40372F;
 }
-header{
-  padding:55px 7% 35px;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
 }
-.eyebrow{
-  color:#B98B5F;
-  font-size:11px;
-  letter-spacing:4px;
-  text-transform:uppercase;
+button, a { font: inherit; }
+.manifesto {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 65px 9%;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(15,14,12,.94), rgba(15,14,12,.70)),
+    url("assets/urban-intro.jpg") center / cover no-repeat;
 }
-h1{
-  font-size:clamp(42px,7vw,82px);
-  font-weight:400;
-  letter-spacing:3px;
-  margin:20px 0 12px;
+.manifesto-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
 }
-.intro{
-  color:#BDB8B0;
-  font-size:15px;
-  letter-spacing:1px;
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: var(--accent);
+  text-transform: uppercase;
 }
-.codes{
-  padding:25px 7% 75px;
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:35px 22px;
+h1 {
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: .98;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin: 28px 0;
 }
-.code{
-  min-width:0;
-  text-decoration:none;
-  color:inherit;
-  display:block;
+.lead {
+  max-width: 700px;
+  font-size: clamp(19px, 2.4vw, 27px);
+  line-height: 1.55;
+  margin: 0 0 22px;
 }
-.photo{
-  position:relative;
-  aspect-ratio:4/5;
-  overflow:hidden;
-  background:#24221F;
+.manifesto-copy {
+  max-width: 660px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 15px;
 }
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .5s;
+.manifesto-copy p { margin: 5px 0; }
+.translation {
+  border-left: 1px solid var(--accent);
+  padding-left: 18px;
+  margin-top: 24px;
 }
-.code:hover .photo img{
-  transform:scale(1.04);
+.translation .label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
-.number{
-  color:#B98B5F;
-  font-size:11px;
-  letter-spacing:3px;
-  margin-top:19px;
+.enter {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+  margin-top: 32px;
+  padding: 19px 23px;
+  min-width: 300px;
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 3px;
+  transition: background .25s, color .25s;
 }
-h2{
-  font-size:19px;
-  font-weight:400;
-  letter-spacing:1.5px;
-  margin:9px 0;
+.enter:hover {
+  background: var(--paper);
+  color: var(--bg);
 }
-.discover{
-  color:#BDB8B0;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:14px;
+.enter span { color: var(--accent); font-size: 20px; }
+
+.gallery {
+  display: none;
+  padding: 65px 7% 85px;
 }
-footer{
-  border-top:1px solid #39342D;
-  padding:28px 7%;
-  color:#8F8980;
-  font-size:10px;
-  letter-spacing:3px;
+.gallery.visible { display: block; }
+.gallery-header { margin-bottom: 38px; }
+.gallery-header h2 {
+  font-size: clamp(38px, 6vw, 70px);
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 18px 0;
 }
-@media(max-width:750px){
-  .codes{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}
-  header{padding-top:38px}
-  h2{font-size:15px}
+.gallery-header p {
+  color: var(--muted);
+  line-height: 1.7;
 }
-@media(max-width:420px){
-  .codes{grid-template-columns:1fr}
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 38px 22px;
+}
+.code-card {
+  min-width: 0;
+  color: var(--paper);
+  text-decoration: none;
+}
+.code-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #24221F;
+  overflow: hidden;
+}
+.code-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.code-card:hover .code-image img { transform: scale(1.035); }
+.code-number {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 18px;
+}
+.code-title {
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+.code-translation {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.discover {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 18px;
+}
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 7%;
+  color: #91887D;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+@media(max-width:800px) {
+  .code-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .manifesto { padding: 45px 7%; }
+}
+@media(max-width:480px) {
+  .code-grid { grid-template-columns: 1fr; }
+  .enter { min-width: 0; width: 100%; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="eyebrow">WORKSHOP · THE CODE</div>
-  <h1>THE URBAN</h1>
-  <p class="intro">THIS IS YOUR CHAPTER. YOU WRITE THE CODE.</p>
-  <p class="intro">Choose the Code that defines you.</p>
-</header>
+<!-- PRIMERA PANTALLA: MANIFIESTO URBAN -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-content">
 
-<main class="codes">
+    <div class="eyebrow">WORKSHOP · THE CODE</div>
 
-  <a class="code" href="urban-code-001.html">
-    <div class="photo">
-      <img src="assets/urban-001.jpg"
-           alt="Code 001 — Own the Future">
+    <h1>THE URBAN</h1>
+
+    <p class="lead">
+      The city. The movement. The attitude.
+      A new generation defining its own Code.
+    </p>
+
+    <div class="manifesto-copy">
+      <p>We don't sell clothing.</p>
+      <p>We create symbols.</p>
+      <p>Every Code represents a value.</p>
+      <p>Every value defines a person.</p>
+      <p>The garment is only the beginning.</p>
+      <p>The Code lives in the one who wears it.</p>
     </div>
-    <div class="number">CODE 001</div>
-    <h2>OWN THE FUTURE</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
 
-  <a class="code" href="urban-code-002.html">
-    <div class="photo">
-      <img src="assets/urban-002.jpg"
-           alt="Code 002 — Earn the Day">
+    <div class="translation">
+      <div class="label">EN ESPAÑOL</div>
+      <div class="manifesto-copy">
+        <p>No vendemos ropa.</p>
+        <p>Creamos símbolos.</p>
+        <p>Cada Code representa un valor.</p>
+        <p>Cada valor define a una persona.</p>
+        <p>La prenda es solo el principio.</p>
+        <p>El Code vive en quien lo lleva.</p>
+      </div>
     </div>
-    <div class="number">CODE 002</div>
-    <h2>EARN THE DAY</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
 
-  <a class="code" href="urban-code-003.html">
-    <div class="photo">
-      <img src="assets/urban-003.jpg"
-           alt="Code 003 — Trust the Detour">
-    </div>
-    <div class="number">CODE 003</div>
-    <h2>TRUST THE DETOUR</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+    <button class="enter" id="enterUrban" type="button">
+      <span style="color:inherit">ENTER THE URBAN</span>
+      <span>→</span>
+    </button>
 
-  <a class="code" href="urban-code-004.html">
-    <div class="photo">
-      <img src="assets/urban-004.jpg"
-           alt="Code 004 — Stay the Course">
-    </div>
-    <div class="number">CODE 004</div>
-    <h2>STAY THE COURSE</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+  </div>
+</section>
 
-  <a class="code" href="urban-code-005.html">
-    <div class="photo">
-      <img src="assets/urban-005.jpg"
-           alt="Code 005 — Keep Your Word">
-    </div>
-    <div class="number">CODE 005</div>
-    <h2>KEEP YOUR WORD</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+<!-- SEGUNDA PANTALLA: LOS SIETE CODES -->
+<section class="gallery" id="urbanCodes">
 
-  <a class="code" href="urban-code-005a.html">
-    <div class="photo">
-      <img src="assets/urban-005a.jpg"
-           alt="Code 005A — Never Betray Trust">
-    </div>
-    <div class="number">CODE 005A</div>
-    <h2>NEVER BETRAY TRUST</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+  <div class="gallery-header">
+    <div class="eyebrow">YOUR IDENTITY · YOUR VALUES</div>
+    <h2>CHOOSE YOUR CODE</h2>
+    <p>Every Code tells a story. Which one is yours?</p>
+    <p>Cada Code cuenta una historia. ¿Cuál es el tuyo?</p>
+  </div>
 
-  <a class="code" href="urban-code-006.html">
-    <div class="photo">
-      <img src="assets/urban-006.jpg"
-           alt="Code 006 — Break the Pattern">
-    </div>
-    <div class="number">CODE 006</div>
-    <h2>BREAK THE PATTERN</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+  <div class="code-grid">
 
-  <a class="code" href="urban-code-007.html">
-    <div class="photo">
-      <img src="assets/urban-007.jpg"
-           alt="Code 007 — Push the Limit">
-    </div>
-    <div class="number">CODE 007</div>
-    <h2>PUSH THE LIMIT</h2>
-    <div class="discover">DISCOVER THIS CODE ↗</div>
-  </a>
+    <a class="code-card" href="urban-code-001.html">
+      <div class="code-image">
+        <img src="assets/urban-001.jpg" alt="Urban Code 001"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 001</div>
+      <h3 class="code-title">CODE 001</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
 
-</main>
+    <a class="code-card" href="urban-code-002.html">
+      <div class="code-image">
+        <img src="assets/urban-002.jpg" alt="Urban Code 002"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 002</div>
+      <h3 class="code-title">CODE 002</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+    <a class="code-card" href="urban-code-003.html">
+      <div class="code-image">
+        <img src="assets/urban-003.jpg" alt="Urban Code 003"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 003</div>
+      <h3 class="code-title">CODE 003</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+    <a class="code-card" href="urban-code-004.html">
+      <div class="code-image">
+        <img src="assets/urban-004.jpg" alt="Urban Code 004"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 004</div>
+      <h3 class="code-title">CODE 004</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+    <a class="code-card" href="urban-code-005.html">
+      <div class="code-image">
+        <img src="assets/urban-005.jpg" alt="Urban Code 005"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 005</div>
+      <h3 class="code-title">CODE 005</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+    <a class="code-card" href="urban-code-006.html">
+      <div class="code-image">
+        <img src="assets/urban-006.jpg" alt="Urban Code 006"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 006</div>
+      <h3 class="code-title">CODE 006</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+    <a class="code-card" href="urban-code-007.html">
+      <div class="code-image">
+        <img src="assets/urban-007.jpg" alt="Urban Code 007"
+             loading="lazy">
+      </div>
+      <div class="code-number">CODE 007</div>
+      <h3 class="code-title">CODE 007</h3>
+      <div class="code-translation">Discover its story · Descubre su historia</div>
+      <div class="discover">DISCOVER CODE ↗</div>
+    </a>
+
+  </div>
+</section>
 
 <footer>WORKSHOP · THE CODE — THE URBAN</footer>
+
+<script>
+document.getElementById("enterUrban").addEventListener("click", function () {
+  const gallery = document.getElementById("urbanCodes");
+  gallery.classList.add("visible");
+  gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+</script>
 
 </body>
 </html>
