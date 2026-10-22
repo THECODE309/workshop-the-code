@@ -5,7 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WORKSHOP — THE CODE | Destinations</title>
-    <link rel="stylesheet" href="code-destinations.css">
+<style>
+body {
+    background: #0b0b0b;
+    color: #f2f0ea;
+    font-family: Arial, sans-serif;
+}
+.destinations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.destination {
+    min-height: 500px;
+    padding: 30px 20px;
+    color: #f2f0ea;
+    text-decoration: none;
+    background: #24211e;
+    border: 1px solid #555;
+}
+.destination h2 {
+    font-size: 48px;
+    line-height: .9;
+}
+.destination-button {
+    display: block;
+    border: 1px solid #a65e37;
+    padding: 15px;
+}
+@media (max-width: 700px) {
+    .destinations {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
