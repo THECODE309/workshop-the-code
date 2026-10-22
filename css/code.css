@@ -832,3 +832,175 @@ color:#8A5A38;
 font-weight:500;
 
 }
+
+/* =========================================
+   CODE DESTINATIONS — THREE COLLECTIONS
+   ========================================= */
+
+.destinations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 0;
+}
+
+.destination {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    min-height: 470px;
+    padding: 30px 24px 32px;
+    overflow: hidden;
+    isolation: isolate;
+    color: #f2f0ea;
+    text-decoration: none;
+    background-color: #171614;
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid rgba(242, 240, 234, 0.2);
+}
+
+.destination:last-child {
+    border-right: none;
+}
+
+/* Dark overlay for legible typography */
+.destination::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.84) 0%,
+        rgba(0, 0, 0, 0.57) 58%,
+        rgba(0, 0, 0, 0.24) 100%
+    );
+    transition: background 0.35s ease;
+}
+
+/* Existing collection photographs */
+.destination.origin {
+    background-image: url("assets/origin.jpg");
+}
+
+.destination.urban {
+    background-image: url("assets/urban.jpg");
+}
+
+/* New Balance photograph */
+.destination.balance {
+    background-image: url("assets/balance.jpg");
+    background-position: 70% center;
+}
+
+.destination-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    min-width: 0;
+}
+
+.destination-number {
+    margin-bottom: 25px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.destination-category {
+    margin-bottom: 24px;
+    color: #a65e37;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.destination h2 {
+    margin: 0 0 28px;
+    color: #f2f0ea;
+    font-size: clamp(2.5rem, 3.4vw, 4.5rem);
+    font-weight: 800;
+    line-height: 0.84;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.destination p {
+    margin: 0 0 30px;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.destination-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: auto;
+    padding: 17px 16px;
+    width: 100%;
+    max-width: 240px;
+    border: 1px solid #a65e37;
+    color: #f2f0ea;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.destination-button span {
+    font-size: 18px;
+}
+
+.destination:hover::before {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.76),
+        rgba(0, 0, 0, 0.30)
+    );
+}
+
+.destination:hover .destination-button {
+    background: rgba(166, 94, 55, 0.25);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .destinations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .destination {
+        min-height: 450px;
+    }
+
+    .destination h2 {
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        min-height: 440px;
+        padding: 32px 26px;
+        border-right: none;
+        border-bottom: 1px solid rgba(242, 240, 234, 0.2);
+    }
+
+    .destination h2 {
+        font-size: clamp(3.5rem, 12vw, 5rem);
+    }
+
+    .destination p {
+        font-size: 13px;
+    }
+}
