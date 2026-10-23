@@ -1,419 +1,276 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>WORKSHOP — THE CODE | THE ORIGIN</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>ORIGIN | WORKSHOP — THE CODE</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root {
+  --bg: #0b0b0a;
+  --card: #121110;
+  --line: #4a3324;
+  --gold: #d98a36;
+  --white: #f2f0ea;
+  --muted: #aaa49d;
 }
 
-html{
-scroll-behavior:smooth;
+* {
+  box-sizing: border-box;
 }
 
-body{
-
-background:#050505;
-color:#F2F0EA;
-font-family:Inter,sans-serif;
-overflow-x:hidden;
-
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Inter, Arial, sans-serif;
 }
 
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-position:relative;
-
-overflow:hidden;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
+.origin-codes {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 9px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
 }
 
-/* IMAGEN */
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:url("assets/workshop-detail.jpg") center center;
-
-background-size:cover;
-
-background-repeat:no-repeat;
-
-transform:scale(1);
-
-animation:zoom 30s ease-in-out infinite alternate;
-
-z-index:0;
-
+.code-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #151412, #0f0f0e);
+  color: var(--white);
+  text-decoration: none;
+  transition: border-color .25s ease, transform .25s ease;
 }
 
-/* OSCURECER */
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:linear-gradient(
-
-to bottom,
-
-rgba(0,0,0,.20),
-
-rgba(0,0,0,.45),
-
-rgba(0,0,0,.70)
-
-);
-
-z-index:1;
-
+.code-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
 }
 
-/* CONTENIDO */
-
-.content{
-
-position:relative;
-
-z-index:5;
-
-max-width:900px;
-
-padding:40px;
-
-animation:fadeUp 2s ease;
-
+.code-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 326 / 250;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
 }
 
-.chapter{
-
-letter-spacing:12px;
-
-font-size:13px;
-
-opacity:.7;
-
-margin-bottom:25px;
-
+.code-info {
+  flex: 1;
+  min-height: 148px;
+  padding: 16px 8px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1{
-
-font-family:"Cormorant Garamond",serif;
-
-font-weight:300;
-
-font-size:95px;
-
-letter-spacing:10px;
-
-margin-bottom:40px;
-
+.code-number {
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
 }
 
-.quote{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:36px;
-
-line-height:1.8;
-
-font-weight:300;
-
+.code-line {
+  width: 35px;
+  height: 1px;
+  margin-bottom: 13px;
+  background: var(--gold);
 }
 
-.quote span{
-
-display:block;
-
-margin-top:10px;
-
-color:#B08D57;
-
+.code-title {
+  margin: 0 0 7px;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
-/* FLECHA */
-
-.arrow{
-
-position:absolute;
-
-bottom:40px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:34px;
-
-z-index:20;
-
-animation:arrow 2s infinite;
-
-opacity:.7;
-
+.code-subtitle {
+  margin: 0 0 17px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: .4px;
 }
 
-/* STORY */
-
-.story{
-
-background:#0E0E0E;
-
-padding:150px 10%;
-
+.code-link {
+  margin-top: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-.story h2{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:55px;
-
-font-weight:300;
-
-margin-bottom:35px;
-
+.code-link span {
+  margin-left: 7px;
+  color: var(--gold);
+  font-size: 17px;
 }
 
-.story p{
-
-max-width:900px;
-
-font-size:22px;
-
-line-height:2;
-
-opacity:.85;
-
+@media (max-width: 1100px) {
+  .origin-codes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-.button{
+@media (max-width: 700px) {
+  .origin-codes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 8px;
+  }
 
-display:inline-block;
+  .code-info {
+    min-height: 150px;
+    padding: 13px 5px 15px;
+  }
 
-margin-top:70px;
+  .code-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
 
-padding:18px 60px;
+  .code-subtitle {
+    font-size: 11px;
+  }
 
-border:1px solid #B08D57;
+  .code-number {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
 
-color:#F2F0EA;
-
-text-decoration:none;
-
-letter-spacing:5px;
-
-transition:.4s;
-
+  .code-link {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
 }
-
-.button:hover{
-
-background:#5A3B2B;
-
-}
-
-/* ANIMACIONES */
-
-@keyframes zoom{
-
-from{
-
-transform:scale(1);
-
-}
-
-to{
-
-transform:scale(1.12);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-@keyframes arrow{
-
-0%{
-
-transform:translate(-50%,0);
-
-}
-
-50%{
-
-transform:translate(-50%,12px);
-
-}
-
-100%{
-
-transform:translate(-50%,0);
-
-}
-
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-h1{
-
-font-size:56px;
-
-}
-
-.quote{
-
-font-size:26px;
-
-}
-
-.story h2{
-
-font-size:42px;
-
-}
-
-.story p{
-
-font-size:18px;
-
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<section class="hero">
+<main class="origin-codes">
 
-<div class="content">
+  <a class="code-card" href="#code-001">
+    <img class="code-image" src="images/code-001.jpg" alt="Code 001 The Origin">
+    <div class="code-info">
+      <div class="code-number">CODE 001</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">THE ORIGIN</h2>
+      <p class="code-subtitle">Construye tu futuro</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-<div class="chapter">
+  <a class="code-card" href="#code-002">
+    <img class="code-image" src="images/code-002.jpg" alt="Code 002 Sacrifice">
+    <div class="code-info">
+      <div class="code-number">CODE 002</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">SACRIFICE</h2>
+      <p class="code-subtitle">El éxito no llega sin sacrificio</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-CHAPTER I
+  <a class="code-card" href="#code-003">
+    <img class="code-image" src="images/code-003.jpg" alt="Code 003 Discipline">
+    <div class="code-info">
+      <div class="code-number">CODE 003</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">DISCIPLINE</h2>
+      <p class="code-subtitle">Confía en el desvío</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-</div>
+  <a class="code-card" href="#code-004">
+    <img class="code-image" src="images/code-004.jpg" alt="Code 004 True Friend">
+    <div class="code-info">
+      <div class="code-number">CODE 004</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">TRUE FRIEND</h2>
+      <p class="code-subtitle">Amigo de verdad</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-<h1>
+  <a class="code-card" href="#code-005">
+    <img class="code-image" src="images/code-005.jpg" alt="Code 005 Loyalty">
+    <div class="code-info">
+      <div class="code-number">CODE 005</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">LOYALTY</h2>
+      <p class="code-subtitle">La lealtad no se dice</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-THE ORIGIN
+  <a class="code-card" href="#code-006">
+    <img class="code-image" src="images/code-006.jpg" alt="Code 006 Keep Your Word">
+    <div class="code-info">
+      <div class="code-number">CODE 006</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">KEEP YOUR WORD</h2>
+      <p class="code-subtitle">Cumple tu palabra</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-</h1>
+  <a class="code-card" href="#code-007">
+    <img class="code-image" src="images/code-007.jpg" alt="Code 007 Respect">
+    <div class="code-info">
+      <div class="code-number">CODE 007</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">RESPECT</h2>
+      <p class="code-subtitle">Sin excusas</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-<div class="quote">
+  <a class="code-card" href="#code-008">
+    <img class="code-image" src="images/code-008.jpg" alt="Code 008 Humility">
+    <div class="code-info">
+      <div class="code-number">CODE 008</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">HUMILITY</h2>
+      <p class="code-subtitle">La humildad siempre</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-Before there was a product...
+  <a class="code-card" href="#code-009">
+    <img class="code-image" src="images/code-009.jpg" alt="Code 009 Legacy">
+    <div class="code-info">
+      <div class="code-number">CODE 009</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">LEGACY</h2>
+      <p class="code-subtitle">Lo que dejas importa</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-<span>
+  <a class="code-card" href="#code-010">
+    <img class="code-image" src="images/code-010.jpg" alt="Code 010 Legacy">
+    <div class="code-info">
+      <div class="code-number">CODE 010</div>
+      <div class="code-line"></div>
+      <h2 class="code-title">LEGACY</h2>
+      <p class="code-subtitle">Nunca olvides de dónde vienes</p>
+      <div class="code-link">DISCOVER CODE <span>→</span></div>
+    </div>
+  </a>
 
-there was a craft.
-
-</span>
-
-</div>
-
-</div>
-
-<div class="arrow">
-
-↓
-
-</div>
-
-</section>
-
-<section class="story">
-
-<h2>
-
-Every stitch tells a story.
-
-</h2>
-
-<p>
-
-Nothing begins with a product.
-
-Everything begins with dedication.
-
-With people who perfect every detail.
-
-With patience.
-
-With discipline.
-
-With values.
-
-The Code was born from that philosophy.
-
-</p>
-
-<a href="collection.html" class="button">
-    ENTER THE CODES
-
-</a>
-
-</section>
+</main>
 
 </body>
-
 </html>
